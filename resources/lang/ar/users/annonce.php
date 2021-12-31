@@ -1,0 +1,37 @@
+<?php
+return [
+   'home'              => 'الرئيسة',
+   'all_annonces'      => 'كل الإعلانات',
+   'proffessionnelles' => 'المحترفين',
+   'advenced_search'   => 'بحث متقدم',
+   'type_annonce'      => "نوع الإعلان",
+   'categorie'         => 'القسم',
+   'wilaya'    	       => 'الولاية',
+   'commune'           => "البلدية",
+   'search'            => "بحث",
+   'new_annonce'       => "آخر الإعلانات",
+   'details'           => "التفاصيل",
+   'description'       => "الوصف",
+   'type'              => "النوع",
+   'prix'              => "السعر",
+   'negociable'        => "قابل للتفاوض",
+   'notNegociable'     => "غير قابل للتفاوض",
+   'name'              => "الإسم",
+   'phone'             => "رقم الهاتف",
+   'email'             => "الابريد الإلكتروني",
+   'similaire_annonce' => "إعلانات ذات صلة",
+   'annonce'           => "الإعلانات",
+   'portfolio'         => "الأعمال",
+   'profil'            => "الملف الشضصي",
+
+
+   'status'            => "الحالة",
+   'actions'           => "العمليات",
+   'back'              => "رجوع",
+   'add_annonce'       => "أضف إعلان",
+   'added_by'          => "أضيف من طرف ",
+   'images'            => "الصور",
+   'save'              => "حفظ",
+   'format'            => "الصيغة",
+
+];

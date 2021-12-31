@@ -1,0 +1,40 @@
+<?php
+return [
+
+    'type'                 => 'النوع',
+    'all_types'            => 'كل أنواع الخصوم',
+    'delete'               => "حذف",
+    'edit'                 => 'تعديل',
+    'type_information'     => 'معلومات النوع',
+    'add_type'             => 'إضافة نوع',
+
+    'all_adversaires'        => 'كل  الخصوم',
+    'adversaire_information' => 'معلومات  الخصم',
+    'add_adversaire'         => 'أضف  خصم',
+    'edit_adversaire'        => 'تعديل  خصم',
+    'name'                 => 'الإسم و اللقب',
+    'fname'                => 'الإسم',
+    'lname'                => 'اللقب',
+    'wilaya'               => 'الولاية',
+    'commune'              => 'البلدية',
+    'phone'                => 'رقم الهاتف',
+    'fax'                  => 'الفاكس',
+    'email'                => 'البريد الإلكتروني',
+    'adress'               => 'العنوان',
+    'date_nais'            => 'تاريخ الميلاد',
+    'lieu_nais'            => 'مكان الميلاد',
+    'nom_commerce'         => 'الإسم التجاري',
+    'num_carte_id'         => "رقم بطاقة التعريف الوطنية",
+    'agree_par'            => 'مصادقة من طرف',
+    'date_sortie'          => "تاريخ الإصدار",
+    'numRc'                => 'رقم السجل التجاري',
+    'created_by'           => 'أضيف من ',   
+
+    'actions'              => 'العمليات',
+    'desactiver'           => 'تعطيل',
+    'edit_type'            => 'تعديل النوع',
+    'save'                 => 'حفظ',
+    'back'                 => 'عودة',
+    'close'                => 'إغلاق',
+
+];

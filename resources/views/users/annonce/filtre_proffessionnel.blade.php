@@ -1,0 +1,96 @@
+@extends('users.layouts.master')
+@section('title')
+	@isset($category) {{$category->name}} @endisset
+@endsection
+@section('style')
+<style type="text/css">
+	.show-menu-arrow option{
+		color: black;
+	}
+</style>
+@endsection
+@section('content')
+    @include('users.includes.publicite.publicite')
+
+<div class="col-lg-12">
+    <div style="float: left;">
+		<ul class="breadcrumb">
+        	<li><a href="{{route('home')}}">{{__('users/annonce.home')}}</a></li>
+        	<li>@isset($category) {{$category->name}} @endisset </li>
+    	</ul>
+	</div>
+	
+    
+</div>
+<section class="generalwrapper dm-shadow clearfix">
+	<div class="container">
+	    <div class="row">
+	        <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+	            <div class="clearfix">
+	            	@isset($users)
+	            	@if($users->count() == 0)
+	            		<div class="col-md-12 boxes">
+			        		<div class="alert alert-danger text-center" id="msg">
+								Aucun Compte existe dans cette categorie
+							</div>
+			        	</div>
+	            	@endif
+	            	@endisset
+	            	@isset($users)
+	            		@foreach($users as $key=> $user)
+			                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+			                    <div class="boxes first" data-effect="slide-bottom">
+			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
+			                        	<a href="{{route('boutique',$user->uuid)}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}">
+			                        	</a>
+			                        </div>
+			                        <h2 class="title">
+			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
+			                            <small class="small_title">{{$user->wilaya->name}}</small>
+			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" alt="{{$user->name}}"></a>
+			                        </h2>
+			                        <div class="my-rating" data-rating="{{$user->avg_rating}}" data-uuid="{{$user->uuid}}" data-id="{{$user->id}}"></div>
+			                    </div><!-- end boxes -->
+			                </div>
+			            @endforeach
+			        @endisset
+
+	            </div>
+
+	        </div><!-- end content -->
+
+	       
+
+	    </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+@endsection
+
+
+@section('script')
+<script src="{{asset('admin/assets/scripts/jquery.min.js')}}"></script>
+
+<script type="text/javascript">
+    $('#wilaya_id').on('change',function(e){
+        var wilaya_id = e.target.value;
+        $('#commune_id').empty();
+        $('.commune').css('display','block');
+        //ajax
+        $.ajax({
+            type: "GET",
+            url: "/users/get-commune/"+wilaya_id,
+            success:function(communes){
+                if(communes.length != 0){
+                    communes.forEach(element =>
+                    {
+                        $('#commune_id').append('<option value="' +element.id+'">'+ element.name+'</option>');
+                    });
+                }
+            }
+            });
+        });
+
+</script>
+@endsection

@@ -1,0 +1,38 @@
+<?php
+return [
+   'home'              => 'Accueil',
+   'all_annonces'      => 'Tout les Annonces',
+   'proffessionnelles' => 'Proffessionnelles',
+   'advenced_search'   => 'Recherche Avancer',
+   'type_annonce'      => "Type d'annonce",
+   'categorie'         => 'Catégorie',
+   'wilaya'    	       => 'Wilaya',
+   'commune'           => "Commune",
+   'service'           => "Service",
+   'search'            => "Rechercher",
+   'new_annonce'       => "NOUVEAUX ANNONCES",
+   'details'           => "Details",
+   'description'       => "Description",
+   'type'              => "Type",
+   'prix'              => "Prix",
+   'negociable'        => "Négociable",
+   'notNegociable'     => "Non Négociable",
+   'name'              => "Nom",
+   'phone'             => "Télèphone",
+   'email'             => "Email",
+   'similaire_annonce' => "Annonces Similire",
+   'annonce'           => "Annonces",
+   'portfolio'         => "Portfolio",
+   'profil'            => "Profile",
+
+
+   'status'            => "Status",
+   'actions'           => "Actions",
+   'back'              => "Retour",
+   'add_annonce'       => "Ajouter un annonce",
+   'added_by'          => "Ajouter par",
+   'images'            => "Images",
+   'save'              => "Enregistrer",
+   'format'            => "Format",
+
+];
