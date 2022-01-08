@@ -8,12 +8,12 @@ return [
    'proffessionnelle'  => 'Proffessionnel',
    'ingenieur'         => 'Ingénieur',
    'clients'           => 'Visiteur',
-   'artisant'          => 'Artisant',
+   'artisant'          => 'Artisans',
    'niveaux'           => 'Niveaux',
    'diplome'           => 'Diplome',
    'type'              => "Type de compte",
 
-   'artisanat'         => 'Artisant créateurs',
+   'artisanat'         => 'Artisan créateurs',
    'particulier'       => 'Particulier',
 
    'wilaya'    	       => 'Wilaya',

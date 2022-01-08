@@ -24,6 +24,31 @@ class ProfilController extends Controller
         }
         return view('users.dashboard.profil.index',$data);
     }
+    public function editDescription(){
+        $data=[];
+        $auth_user = Auth::user()->id;
+        $data['user'] = User::where('id',$auth_user)->first();
+        $data['detail'] = DetailsUser::where('user_id',$auth_user)->first();
+         if(!$data['user']){
+            return redirect()->back()->with(['error'=>"Ce profil n'existe pas"]);
+        }
+        return view('users.dashboard.profil.edit_description',$data);
+    }
+    public function storeDescription(Request $request,$uuid){
+        $data=[];
+        $data['user'] = User::where('uuid',$uuid)->first();
+        if(!$data['user']){
+            return redirect()->back()->with(['error'=>"Ce profil n'existe pas"]);
+        }
+        $data['detail'] = DetailsUser::where('user_id',$data['user']->id)->first();
+        if(!$data['detail']){
+            return redirect()->back()->with(['error'=>"Ce profil n'existe pas"]);
+        }
+        $data['detail']->update([
+            'description' => $request->description,
+        ]);
+        return redirect()->route('users.dashboard')->with(['success'=>"la description a étè ajoutée avec success"]);
+    }
 
     public function updateInfo(Request $request)
     {

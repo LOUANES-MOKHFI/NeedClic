@@ -17,6 +17,7 @@
     @include('users.includes.filter.filter_boutique')
     @include('users.includes.filter.filter_particulier')
     @include('users.includes.filter.filter_artisanat')
+    @include('users.includes.modal.UnAuthLike')
 <div class="col-lg-12">
 	<div style="float: left;">
 		<ul class="breadcrumb">
@@ -79,25 +80,27 @@
 			                        	</a>
 			                           
 
-			                            <div class="box_type">{{$annonce->prix}} DA</div>
+			                            <!-- <div class="box_type">{{$annonce->prix}} DA</div> -->
 			                            <!-- <span class="status_type orange"><span class="text">
 			                            	
 			                            </span></span> -->
 			                        </div>
 			                        <h2 class="title">
-			                        	@if(Auth::check())
 			                        	@if($annonce->user->type_compte == 1)
-			                        		
-                                   <a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
-		                                      	<i class="fa fa-heart ann{{$annonce->id}} @if(in_array($annonce->id, $usersLike) ) red @endif}} "
-		                                      	 style="font-size: 20px"></i>
-		                                 	</a>
-		                              
-
-                                   		@endif
+				                        	@if(Auth::check())
+	                                   			<a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
+			                                      	<i class="fa fa-heart ann{{$annonce->id}} @if(in_array($annonce->id, $usersLike) ) red @endif}} "
+			                                      	 style="font-size: 20px"></i>
+			                                 	</a>
+			                                @else
+			                                	<a  href="#" data-toggle="modal" data-target="#unAuthLike" class="unAuth" title="J'aime">
+			                                      	<i class="fa fa-heart "
+			                                      	 style="font-size: 20px"></i>
+			                                 	</a>
+	                                   		@endif
                                    		@endif
 			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
-			                            <small class="small_title">{{$annonce->user->wilaya->name}}</small>
+			                            <!-- <small class="small_title">{{$annonce->user->wilaya->name}}</small> -->
 			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$annonce->user->name.'/'.$annonce->user->image)}}" alt="{{$annonce->user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->
@@ -151,6 +154,13 @@
     });
 }(jQuery));
     
+</script>
+<script type="text/javascript">
+	$(document).on('click', '.unAuth', function () {
+
+         $('.UnAuthLike').css('display','block');
+        
+    })
 </script>
 <script type="text/javascript">
 	$(document).on('click', '.Like', function () {

@@ -65,7 +65,7 @@
 			                        	@if(Auth::check())
 			                        	@if($annonce->user->type_compte == 1)
 			                        		
-                                   <a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
+                                   			<a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
 		                                      	<i class="fa fa-heart ann{{$annonce->id}} @if(in_array($annonce->id, $usersLike) ) red @endif}} "
 		                                      	 style="font-size: 20px"></i>
 		                                 	</a>
@@ -75,7 +75,7 @@
                                    		@endif
 
 			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
-			                            <small class="small_title">{{$annonce->user->wilaya->name}}</small>
+			                            <!-- <small class="small_title">{{$annonce->user->wilaya->name}}</small> -->
 			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$annonce->user->name.'/'.$annonce->user->image)}}" alt="{{$annonce->user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->

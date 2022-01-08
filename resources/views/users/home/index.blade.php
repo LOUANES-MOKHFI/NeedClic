@@ -30,6 +30,22 @@
 .slides .desc, .sticky-toolbar {
     display: block;
 }
+.slider-pro-desc .type,
+.slider-pro-desc .price,
+.slider-pro-desc .status {
+    display: inline-block;
+    font-size: 13px;
+    min-width:126px;
+    max-width:126px;
+    padding: 6px 0px 8px;
+    text-align:center;
+    position: absolute;
+    text-decoration: none;
+}
+.slider-pro-desc .price {
+    bottom: -34px;
+    left: 126px;
+}
  </style>
 @endsection
 @section('content')
@@ -109,7 +125,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="search-section clearfix" data-effect="slide-right">
+                        
                             <div class="first" data-effect="slide-bottom">
                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                     <a href="{{route('categories.proffessionnelles','Artisant')}}">
@@ -121,10 +137,10 @@
                                     <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Artisant')}}"> {{__('users/home.artisant')}}</a>
                                 </h2>
                             </div><!-- end boxes -->
-                        </div>
+                        
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        <div class="search-section clearfix" data-effect="slide-right">
+                        
                             <div class="first" data-effect="slide-bottom">
                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                     <a href="{{route('categories.proffessionnelles','Ingénieure')}}">
@@ -136,10 +152,12 @@
                                     <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Ingénieure')}}"> {{__('users/home.ingenieur')}}</a>
                                 </h2>
                             </div><!-- end boxes -->
-                        </div>
+                        
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="search-section clearfix" data-effect="slide-right" style="height: 255px">
+                        <div class="text-center"  style="color: DodgerBlue;padding-top:0px">
+                            <h3 style="color: DodgerBlue;font-weight: bold;">{{__('users/home.boutique')}}</h3>
+                        </div>
                             <div class="items">
                             @isset($services)
                                 @foreach($services as $key=>$service)
@@ -158,7 +176,7 @@
                                 @endforeach
                             @endisset
                             </div>
-                        </div>
+                        
                     </div><!-- end col-lg-4 -->
                     
                 </div><!-- end row -->
@@ -173,8 +191,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="search-section clearfix" data-effect="slide-right">
-                            <div class="first" data-effect="slide-bottom">
+                        
+                        <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.artisanat','Artisanat')}}">
                                 <img class="img-responsive" src="{{asset('users/img/home/artisanatR.jpg')}}" alt="NeedClic" >
@@ -188,11 +206,11 @@
                             </p>
                            
                         </div><!-- end boxes -->
-                        </div><!-- end search module -->
+                        
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="search-section clearfix" data-effect="slide-right">
-                            <div class="first" data-effect="slide-bottom">
+                        
+                        <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.particulier','Particulier')}}">
                                     <img class="img-responsive" src="{{asset('users/img/home/particulier.jpg')}}" alt="NeedClic">
@@ -203,10 +221,10 @@
                                 <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.particulier','Particulier')}}"> {{__('users/home.particulier')}}</a>
                             </p>
                         </div><!-- end boxes -->
-                        </div><!-- end search module -->
+                        
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div id="property-slider" class="clearfix">
+                        <div id="" class="clearfix">
                             <div class="itemss">
                         @isset($categoriesBlogs)
                         @foreach($categoriesBlogs as $key=>$category)
@@ -247,12 +265,12 @@
 </section><!-- end mapandslider -->
 <section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
-            <div class="overlay1 dm-shadow" style="padding-top: 55px; padding-bottom: 50px;">
+            <div class="overlay1 dm-shadow" style="padding-top: 15px; padding-bottom: 15px;">
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <div id="property-slider" class="clearfix">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 15px;">
+                            <div id="" class="clearfix">
                                 <div class="flexslider">
                                     <ul class="slides">
                                         @isset($pubsbas)
@@ -274,7 +292,7 @@
                             </div><!-- end property-slider -->
                         </div><!-- end col-lg-8 -->
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div id="property-slider" class="clearfix">
+                            <div id="" class="clearfix">
                             <div class="flexslider">
                                 <ul class="slides">
                                     @isset($users)
@@ -303,7 +321,7 @@
                                                             </span>
                                                         @endif
                                                         <span class="price">{{$user->wilaya->name}}</span>
-                                                        <a href="#" class="status">{{$user->num_tlfn}}</a>
+                                                        
                                                     </div>
                                                 </div>
                                                 <a href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" alt="" style="height: 280px"></a>

@@ -4,9 +4,9 @@ return [
    'boutiques_type'     => 'Tout les types des boutiques',
    'proffessionnelles' => 'Proffessionnels',
    'boutique'          => 'Boutiques',
-   'artisant'          => 'Artisants',
+   'artisant'          => 'Artisans',
    'ingenieur'         => 'Ingénieurs',
-   'artisanat'         => 'Artisant créateurs',
+   'artisanat'         => 'Artisan créateurs',
    'particulier'       => 'Particuliers',
 
    'our_blogs'    	   => 'Blogs',

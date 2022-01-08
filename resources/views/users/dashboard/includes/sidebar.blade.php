@@ -8,11 +8,11 @@
 			<h5 class="position">
 				@if(Auth::user()->type_compte == 0)
                     <span class="text-info">
-                        Particulier
+                        {{Auth::user()->category ? Auth::user()->category->name : '/'}}
                     </span>
                 @elseif(Auth::user()->type_compte == 1)
                     <span class="text-warning">
-                        Artisanat
+                        {{Auth::user()->category ? Auth::user()->category->name : '/'}}
                     </span>
                 @elseif(Auth::user()->type_compte == 2)
                     <span class="text-danger">
@@ -20,7 +20,7 @@
                     </span>
                 @elseif(Auth::user()->type_compte == 3)
                     <span class="text-success">
-                        Boutique
+                        {{DetailUser(Auth::user()->id) ? DetailUser(Auth::user()->id)->service->name : "/"}}   
                     </span>
                 @endif
 			</h5>

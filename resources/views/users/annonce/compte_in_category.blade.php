@@ -55,10 +55,12 @@
 			                        </div>
 			                        <h2 class="title">
 			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
-			                            <small class="small_title">{{$user->wilaya->name}}</small>
+			                            <small class="small_title">
+			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}"  data-id="{{$user->id}}"></div>
+			                            </small>
 			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}"></a>
 			                        </h2>
-			                        <div class="my-rating" data-rating="{{$user->avg_rating}}"  data-id="{{$user->id}}"></div>
+			                        
 			                    </div><!-- end boxes -->
 			                </div>
 			            @endforeach

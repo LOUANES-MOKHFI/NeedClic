@@ -98,8 +98,14 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">{{__('admin/annonces.prix')}}</label>
-                                                            <input type="text" value="{{$annonce->prix}}" id="type"
-                                                                   class="form-control" placeholder=" " name="prix">
+                                                            <div class="input-group margin-bottom-20">
+                                                                <input type="text" value="{{$annonce->prix}}" id="name" class="form-control" placeholder=" " name="prix">
+                                                                <div class="input-group-btn">
+                                                                    <button type="button" class="btn no-border waves-effect waves-light">
+                                                                        DA
+                                                                    </button>
+                                                                </div>
+                                                            </div>
                                                             @error("prix")
                                                             <span class="text-danger"> {{$message}}  </span>
                                                             @enderror

@@ -78,17 +78,22 @@
                                         <div class="col-md-12">
                                             <div class="my-rating" data-rating="{{$user->avg_rating}}" disabled></div>
                                         </div>
+                                        @if(Auth::user()->type_compte == 2)
                                         <div class="col-md-12">
-                                            <a class="btn btn-warning btn-bordered" href="{{route('users.profil')}}">{{__('admin/members.edit_profil')}}</a>
+                                            <a class="btn btn-warning btn-bordered" href="{{route('users.profil.editDescription')}}">Ajouter une description</a>
                                         </div>
+                                        @endif
                                     </div>
+
                                     @if(Auth::user()->type_compte == 2)
                                     <div class="col-md-12 col-xs-12">
                                         <br>
+                                        @isset($detail->description)
                                         <div class="col-md-12 col-xs-12"><label>{{__('admin/annonces.description')}}:</label></div>
                                         <div class="col-md-12 col-xs-12">
                                             {!! html_entity_decode($detail->description) !!}
                                         </div>
+                                        @endisset
                                     </div>
                                     @endif
 

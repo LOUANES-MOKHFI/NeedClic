@@ -34,37 +34,43 @@
     
 </div>
 <section class="generalwrapper dm-shadow clearfix">
-            <div class="container">
-                <div class="row">
-                    <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
-                        <div class="blog_container clearfix">
-                        	@isset($album->attachements)
-	                        	@foreach($album->attachements as $key=>$attachement)
-		                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-		                                <article class="blog-wrap boxes portfolio-wrap">
-		                                    <div class="blog-media">
-		                                        <div class="ImageWrapper boxes_img">
-		                                            <img class="img-responsive imgg" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="">
-		                                            <div class="ImageOverlayH"></div>
-		                                            <div class="Buttons StyleMg">
-		                                                <span class="WhiteSquare"><a class="fancybox" href="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}"><i class="fa fa-search"></i></a></span>
-		                                            </div> 
-		                                        </div><!-- ImageWrappe-->
-		                                    </div><!-- end blog media -->
-		                                </article><!-- end blog wrap -->
-		                            </div><!-- end col-lg-3 -->
-	                            @endforeach
-                            @endisset
+    <div class="container">
+        <div class="row">
+            <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+                <div class="property_wrapper   boxes clearfix">
+                    <div class="boxes_img">
+                        <div id="slider" class="flexslider clearfix">
+                            <ul class="slides">
+                                
+                                @foreach($album->attachements as $key=>$attachement)
+                                <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
+                                @endforeach
+                               
+                            </ul>
+                        </div>
+                        <div id="carousel" class="flexslider clearfix">
+                            <ul class="slides">
+                                @isset($album->attachements)
+                                @foreach($album->attachements as $key=>$attachement)
+                                <li><img class="img-thumbnail" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
 
+                                @endforeach
+                                @endisset
+                            </ul>
+                        </div> 
+                    </div><!-- boxes_img -->
+                    <hr>
+                    
+                </div><!-- end property_wrapper -->
 
-                        </div><!-- end row -->
+            </div><!-- end content -->
 
-                    </div><!-- end content -->
+            
 
-                   
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </section><!-- end generalwrapper -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
 @endsection
 
 @section('script')

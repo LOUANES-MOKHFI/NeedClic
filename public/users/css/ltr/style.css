@@ -2213,8 +2213,8 @@ iframe, embed, object {
 .slider-pro-desc .status {
     display: inline-block;
     font-size: 13px;
-    min-width:84px;
-    max-width:84px;
+    min-width:126px;
+    max-width:126px;
     padding: 6px 0px 8px;
     text-align:center;
     position: absolute;
@@ -2248,7 +2248,7 @@ iframe, embed, object {
 }
 .slider-pro-desc .price {
     bottom: -34px;
-    left: 84px;
+    left: 126px;
 }
 .slider-pro-desc .status {
     bottom: -34px;
@@ -2269,11 +2269,8 @@ iframe, embed, object {
     position:relative;
     overflow:hidden;
     margin-bottom:15px;
-    border:1px solid #F0F0F0;  
     background:#ffffff;
-    -moz-box-box-shadow:2px 2px 1px  RGBa(0,0,0, 0.035);
-    -webkit-box-shadow:2px 2px 1px  RGBa(0,0,0, 0.035);
-    box-shadow:1px 1px 1px  RGBa(0,0,0, 0.035);		
+    
 }
 .boxes .title {
     text-transform:none !important
@@ -2299,9 +2296,8 @@ iframe, embed, object {
     font-weight:bold;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     margin-top:15px;
-    margin-bottom:10px;
+    margin-bottom:5px;
     text-transform:uppercase;
-    border-bottom:1px solid #efefef;
     padding-bottom:10px;
 }
 .boxes .small_title  {

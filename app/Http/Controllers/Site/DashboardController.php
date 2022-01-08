@@ -114,7 +114,7 @@ class DashboardController extends Controller
     {
         $data = [];
         $data['categories'] = CategoryAnnonces::all();
-         $data['categoriesPart'] = CategoryAnnonces::where('category_compte',1)->get();
+        $data['categoriesPart'] = CategoryAnnonces::where('category_compte',1)->get();
         $data['annonce'] = Annonces::isAnnonce($uuid)->first();
         if(!$data['annonce']){
             return redirect()->route('users.dashboard')->with(['error'=>'cette annonce n\'existe pas']);
@@ -135,7 +135,6 @@ class DashboardController extends Controller
                $data['annonce']->update([
                     'titre'         => $request->titre,
                     'description'   => $request->description,
-                    'category_id'   => $detail->service_id,
                     'is_negociable' => $request->is_negociable,
                     'prix'          => $request->prix,
                     'user_id'       => Auth::user()->id,

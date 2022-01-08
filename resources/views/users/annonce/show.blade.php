@@ -50,6 +50,13 @@
                     </div><!-- boxes_img -->
                     <hr>
                     <div class="row">
+                        <div class="col-lg-7">
+
+                            <div class="listing-detail-section" id="listing-detail-section-description">
+                                <h2 class="page-header">{{__('users/annonce.description')}}</h2>        
+                                <p>{!! Html_entity_decode($annonce->description)!!}</p>
+                            </div><!-- /.listing-detail-section -->
+                        </div><!-- /.col-* -->
                         <div class="col-lg-5">
                             <div class="overview">
                                 <div class="listing-detail-section" id="listing-detail-section-attributes">
@@ -57,35 +64,62 @@
 
                                     <div class="listing-detail-attributes">
                                         <ul>
+                                            <li class="listing_property_year_built">
+                                                <strong class="key">
+                                                    @if($annonce->user->type_compte == 1)
+                                                        @if(Auth::check())
+                                                            <a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
+                                                                <i class="fa fa-heart ann{{$annonce->id}} @if(in_array($annonce->id, $usersLike) ) red @endif}} "
+                                                                 style="font-size: 20px"></i>
+                                                            </a>
+                                                        @else
+                                                            <a  href="#" data-toggle="modal" data-target="#unAuthLike" class="unAuth" title="J'aime">
+                                                                <i class="fa fa-heart "
+                                                                 style="font-size: 20px"></i>
+                                                            </a>
+                                                        @endif
+                                                    @endif
+                                                </strong>
+                                            </li>
+                                            <li class="listing_property_agent">
+                                                <strong class="key">Annonce</strong>
+                                                <span class="value">
+                                                    {{$annonce->titre}}
+                                                </span>
+                                            </li>
                                         	<li class="listing_property_agent">
                                                 <strong class="key">{{__('users/annonce.type')}}</strong>
                                                 <span class="value">
                                                 	@if($annonce->user->type_compte == 0)
                                                 	<a href="{{route('boutique',$annonce->user->uuid)}}">
 									                    <span class="text-info">
-									                        Particulier
+									                        {{$annonce->user->category ? $annonce->user->category->name : '/'}}
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 1)
 									                <a href="{{route('boutique',$annonce->user->uuid)}}">
 									                    <span class="text-warning">
-									                        Artisanat
+									                        {{$annonce->user->category ? $annonce->user->category->name : '/'}}
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 2)
 									                <a href="{{route('boutique',$annonce->user->uuid)}}">
 									                    <span class="text-danger">
-									                       {{$annonce->detail->type_compte_proff}}   
+									                       {{$annonce->user->category ? $annonce->user->category->name : '/'}}  
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 3)
 									                <a href="{{route('boutique',$annonce->user->uuid)}}">
 									                    <span class="text-success">
-									                        Boutique
+                                                            {{DetailUser(annonce->user->id) ? DetailUser(annonce->user->id)->service->name : "/"}} 
 									                    </span>
 									                </a>
 									                @endif
                                                 </span>
+                                            </li>
+                                            <li class="price">
+                                                <strong class="key">Nom de boutique</strong>
+                                                <span class="value"><a href="{{route('boutique',$annonce->user->uuid)}}">{{$annonce->user->name}}</a></span>
                                             </li>
                                             <li class="price">
                                                 <strong class="key">{{__('users/annonce.prix')}}</strong>
@@ -132,7 +166,9 @@
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.phone')}}</strong>
-                                                <span class="value">{{$annonce->user->num_tlfn}}</span>
+                                                <span class="value">
+                                                    <span> <a id="num" href="tel:{{$user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
+                                                </span>
                                             </li>
                                         </ul>
                                     </div><!-- /.listing-detail-attributes -->
@@ -140,13 +176,7 @@
                             </div><!-- /.overview -->
                         </div><!-- /.col-* -->
 
-                        <div class="col-lg-7">
-
-                            <div class="listing-detail-section" id="listing-detail-section-description">
-                                <h2 class="page-header">{{__('users/annonce.description')}}</h2>        
-                                <p>{!! Html_entity_decode($annonce->description)!!}</p>
-                            </div><!-- /.listing-detail-section -->
-                        </div><!-- /.col-* -->
+                        
                     </div>
                     <hr>
                     
@@ -157,8 +187,8 @@
 	        
 
 	    </div><!-- end row -->
-            </div><!-- end container -->
-        </section>
+    </div><!-- end container -->
+</section>
 @endsection
 
 @section('script')
@@ -227,5 +257,59 @@
             });
         });
     
+</script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        //console.log( "ready!" );
+        var num = $("#num").attr('href');
+       // console.log(num);
+        //console.log(num.substring(4, 8));
+        newNum = num.substring(4, 8);
+        newNum1 = num.substring(8, 18);
+        //$('.spanNum').html(newNum);
+        //$('.spanNum1').html(newNum1);
+    });
+</script>
+<script type="text/javascript">
+    $(document).on('click', '.unAuth', function () {
+
+         $('.UnAuthLike').css('display','block');
+        
+    })
+</script>
+<script type="text/javascript">
+    $(document).on('click', '.Like', function () {
+
+        var compte_uuid;
+        var annonce_id;
+        compte_uuid = $(this).attr('data-uuid');
+        
+        annonce_id = $(this).attr('data-annonce_id');
+        
+        var user_uuid = $(this).attr('data-user_uuid');
+       
+        $('.ann'+annonce_id).css('color','red');
+        //alert(uuid);
+        Like(compte_uuid,user_uuid,annonce_id);
+    })
+
+    function Like(compte_uuid,user_uuid,annonce_id){
+        $.ajax({
+            type: "GET",
+            url:"/compte-like/"+compte_uuid+"/"+user_uuid+"/"+annonce_id,
+            success:function(response){
+                status = response.status;
+                if(status == 200){
+                    //alert('Success');
+                    $('.ann'+annonce_id).css('color','red');
+                }else{
+                    if(status == 201){
+                        //alert('Success');
+                        $('.ann'+annonce_id).css('color','#F6700E');
+                    }
+                }
+            }
+        });
+    }
 </script>
 @endsection

@@ -98,6 +98,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 		////Dasboard
 		Route::group(['prefix' => 'users','middleware' => 'auth'],function(){
 			Route::get('/profil','ProfilController@index')->name('users.profil')->middleware('userAuth');
+			Route::get('/profil/edit-description','ProfilController@editDescription')->name('users.profil.editDescription')->middleware('userAuth');
+			Route::post('/profil/store-description/{uuid}','ProfilController@storeDescription')->name('users.profil.storeDescription')->middleware('userAuth');
 			Route::post('/updatePassword','ProfilController@updatePassword')->name('users.profil.updatePassword')->middleware('userAuth');
 			Route::post('/updateInfo','ProfilController@updateInfo')->name('users.profil.updateInfo')->middleware('userAuth');
 			Route::post('/updatePortfolio/{uuid}','ProfilController@updatePortfolio')->name('users.profil.updatePortfolio')->middleware('userAuth');

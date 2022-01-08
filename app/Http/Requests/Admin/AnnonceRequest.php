@@ -26,7 +26,7 @@ class AnnonceRequest extends FormRequest
         return [
             'titre'         => 'required',
             //'is_negociable' => 'required|in:0,1',
-            'prix'          => 'required',
+            'prix'          => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'description'   => 'required|min:3',
             'attachments'   => 'required_without:id|array|min:1',
             //'category_id'   => 'required|exists:categories_annonces,id',

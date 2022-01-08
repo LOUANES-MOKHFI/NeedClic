@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row">
                 <!-- col #1 -->
-                <div class="logo_footer dark col-md-3">
+                <div class="logo_footer dark col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img alt="" src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" class="footer-logo" style="height: 120px;width: 200px"> 
                     <p class="block">
                         {{Setting()->slogon}}
@@ -10,7 +10,7 @@
                 </div>
                 <!-- /col #1 -->
                 <!-- col #2 -->
-                <div class="spaced col-md-3 col-sm-4 hidden-xs">
+                <!-- <div class="spaced col-md-3 col-sm-4 hidden-xs">
                     <h4>{{__('users/footer.last_blog')}}</h4>
                     <ul class="list-unstyled">
                         @if(!empty(LastBlog()))
@@ -23,14 +23,14 @@
                         @endif
                         
                     </ul>
-                </div>
+                </div> -->
                 <!-- /col #2 -->
 
                 <!-- col #3 -->
                 
                 <!-- /col #3 -->
                 <!-- col #4 -->
-                <div class="spaced col-md-3 col-sm-4">
+                <div class="spaced col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h4>{{__('users/footer.about')}}</h4>
                     <p>
                         {{Setting()->about}}
@@ -43,7 +43,7 @@
                         @if(!empty(Setting()->instagram))<a href="{{Setting()->instagram}}" class="social fa fa-instagram"></a>@endif
                     </p><!-- /social -->
                 </div>
-                <div class="spaced col-md-3 col-sm-4 hidden-xs">
+                <!-- <div class="spaced col-md-3 col-sm-4 hidden-xs">
                     <h4>{{__('users/footer.last_annonce')}}</h4>
                     <ul class="list-unstyled">
                         @if(!empty(LastAnnonces()))
@@ -56,7 +56,7 @@
                         @endif
                         
                     </ul>
-                </div>
+                </div> -->
                 <!-- /col #4 -->
             </div>
         </div>

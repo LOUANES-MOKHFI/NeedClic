@@ -154,7 +154,6 @@ class DashboardController extends Controller
                $data['annonce']->update([
                     'titre'         => $request->titre,
                     'description'   => $request->description,
-                    'category_id'   => $detail->service_id,
                     'is_negociable' => $request->is_negociable,
                     'prix'          => $request->prix,
                     'user_id'       => Auth::user()->id,

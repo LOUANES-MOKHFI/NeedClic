@@ -15,6 +15,7 @@
 </style>
 @endsection
 @section('content')
+    @include('users.includes.modal.UnAuthReviews')
 
 <div class="col-lg-12">
     <ul class="breadcrumb">
@@ -51,6 +52,8 @@
                             <div class="my-rating" data-rating="{{$user->avg_rating}}" disabled></div>
                             @if(Auth::check())
                                 <div><h4>Votre évaluation: </h4><div class="my-rating-5 a" @if($usersReviews) data-rating="{{$usersReviews->rating}}" @else data-rating="0" @endif  data-compte_uuid="{{$user->uuid}}"  data-user_review_uuid="{{Auth::user()->uuid}}"></div></div>
+                            @else
+                                <div><h4>Votre évaluation: </h4><div class="my-rating-5 unAuth" data-toggle="modal" data-target="#UnAuthReviews" ></div></div>
                             @endif
                         </div>
                     </div>
@@ -188,6 +191,13 @@
 
 @section('script')
 <script src="{{asset('users/js/jquery.star-rating-svg.js')}}"></script>
+<script type="text/javascript">
+    $(document).on('click', '.unAuth', function () {
+
+         $('.UnAuthReviews').css('display','block');
+        
+    })
+</script>
 <script type="text/javascript">
     $( document ).ready(function() {
         //console.log( "ready!" );
