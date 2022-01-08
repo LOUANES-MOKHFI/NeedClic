@@ -111,7 +111,7 @@
 									                @elseif($annonce->user->type_compte == 3)
 									                <a href="{{route('boutique',$annonce->user->uuid)}}">
 									                    <span class="text-success">
-                                                            {{DetailUser(annonce->user->id) ? DetailUser(annonce->user->id)->service->name : "/"}} 
+                                                            {{DetailUser($annonce->user->id) ? DetailUser($annonce->user->id)->service->name : "/"}} 
 									                    </span>
 									                </a>
 									                @endif
@@ -167,7 +167,7 @@
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.phone')}}</strong>
                                                 <span class="value">
-                                                    <span> <a id="num" href="tel:{{$user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
+                                                    <span> <a id="num" href="tel:{{$annonce->user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
                                                 </span>
                                             </li>
                                         </ul>

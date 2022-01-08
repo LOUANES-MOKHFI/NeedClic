@@ -156,14 +156,14 @@
                                                     <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
                                                     </a>
 
-                                                    <div class="box_type">{{$annonce->prix}}</div>
+                                                    <!-- <div class="box_type">{{$annonce->prix}}</div> -->
 
                                                 </div>
                                                 <h2 class="title">
                                                     @if(Auth::check())
                                                         @if($annonce->user->type_compte == 1)
                                                             
-                                    <a href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
+                                                            <a href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
                                                             <i class="fa fa-heart ann{{$annonce->id}} @if(in_array($annonce->id, $usersLike) ) red @endif}} "
                                                                  style="font-size: 20px"></i>
                                                             </a>

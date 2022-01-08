@@ -51,6 +51,15 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
 
    	<style type="text/css">
        .flex-control-paging li a {display: none;}
+       .boxes .title {
+            font-size: 13px;
+            font-weight: bold;
+            font-family: 'Lato', Arial, Helvetica, sans-serif;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
     </style>
     @yield('style')
 
@@ -102,8 +111,8 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
             var modal = $(this)
         });
      
-     $(".my-rating").starRating({
-        starSize: 25,
+     $(".my-rating-5").starRating({
+        starSize: 19,
 
         callback: function(currentRating, $el){
 
@@ -126,7 +135,7 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
         }
     });
 $(".my-rating").starRating({
-        starSize: 25,
+        starSize: 19,
         //readOnly: true,
 
         callback: function(currentRating, $el){
