@@ -43,7 +43,7 @@
                             <ul class="slides">
                                 
                                 @foreach($album->attachements as $key=>$attachement)
-                                <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
+                                <li><img class="img-thumbnail" style="height: 470px" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
                                 @endforeach
                                
                             </ul>

@@ -2252,10 +2252,10 @@ iframe, embed, object {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 } 
 .boxes {
-    padding:5px;
+    padding:0px;
     position:relative;
     overflow:hidden;
-    margin-bottom:15px;
+    margin-bottom:0px;
     
     background:#ffffff;
   
@@ -6317,10 +6317,10 @@ iframe, embed, object {
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 } 
 .boxes {
-    padding:5px;
+    padding:0x;
     position:relative;
     overflow:hidden;
-    margin-bottom:15px;
+    margin-bottom:0px;
     background:#ffffff;
        
 }
