@@ -312,6 +312,7 @@ class AnnoncesController extends Controller
         $data['service_id'] = $request->service;
         $data['wilaya_id'] = $request->wilaya;
         $data['commune_id'] = $request->commune;
+        $data['keyword'] = $request->keyword;
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
@@ -323,35 +324,70 @@ class AnnoncesController extends Controller
         if(Auth::user()){
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
         }
-        if(!$data['service_id'] && !$data['wilaya_id'] && !$data['commune_id']){
+        if(!$data['service_id'] && !$data['wilaya_id'] && !$data['commune_id'] && !$data['keyword']){
             $data['status'] = 501;
             $data['msg'] = "veuillez selectionner au moin un filtre";
             return view('users.annonce.filtre_annonces',$data);
 
         }else{
             if($data['service_id'] && $data['wilaya_id'] && $data['commune_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)
+                                    ->whereIn('user_id',$users_wil_com_ids)
+                                    ->where('titre','Like','%'.$data['keyword'].'%')
+                                    ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                 $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)
                                     ->whereIn('user_id',$users_wil_com_ids)->get();
                 $data['status'] = 200;
                 return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['service_id'] && $data['wilaya_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)
+                                        ->whereIn('user_id',$users_wil_ids)
+                                        ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)
                                         ->whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id'] && $data['commune_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['service_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_service_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
@@ -364,6 +400,7 @@ class AnnoncesController extends Controller
         $data['category_id'] = $request->category;
         $data['wilaya_id'] = $request->wilaya;
         $data['commune_id'] = $request->commune;
+        $data['keyword'] = $request->keyword;
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
@@ -375,38 +412,67 @@ class AnnoncesController extends Controller
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
         }
 
-        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id']){
+        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id'] && !$data['keyword']){
             $data['status'] = 501;
             $data['msg'] = "veuillez selectionner au moin un filtre";
             return view('users.annonce.filtre_annonces',$data);
 
         }else{
             if($data['category_id'] && $data['wilaya_id'] && $data['commune_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                                ->whereIn('user_id',$users_wil_com_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                 $data['annonces'] = Annonces::where('category_id',$data['category_id'])
                                     ->whereIn('user_id',$users_wil_com_ids)->get();
                 $data['status'] = 200;
                 return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['category_id'] && $data['wilaya_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                                ->where('titre','Like','%'.$data['keyword'].'%')
+                                                ->whereIn('user_id',$users_wil_ids)->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                     $data['annonces'] = Annonces::where('category_id',$data['category_id'])
                                         ->whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id'] && $data['commune_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['category_id']){
-                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])->get();
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
+                }
             }
         }
     }
@@ -415,6 +481,8 @@ class AnnoncesController extends Controller
         $data['category_id'] = $request->category;
         $data['wilaya_id'] = $request->wilaya;
         $data['commune_id'] = $request->commune;
+        $data['keyword'] = $request->keyword;
+
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
@@ -426,35 +494,71 @@ class AnnoncesController extends Controller
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
         }
 
-        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id']){
+        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id'] && !$data['keyword']){
             $data['status'] = 501;
             $data['msg'] = "veuillez selectionner au moin un filtre";
             return view('users.annonce.filtre_annonces',$data);
 
         }else{
             if($data['category_id'] && $data['wilaya_id'] && $data['commune_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                    ->whereIn('user_id',$users_wil_com_ids)
+                                    ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                }
                 $data['annonces'] = Annonces::where('category_id',$data['category_id'])
                                     ->whereIn('user_id',$users_wil_com_ids)->get();
                 $data['status'] = 200;
                 return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['category_id'] && $data['wilaya_id']){ 
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                        ->whereIn('user_id',$users_wil_ids)
+                                        ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::where('category_id',$data['category_id'])
                                         ->whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id'] && $data['commune_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_com_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['wilaya_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::whereIn('user_id',$users_wil_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
             }
             elseif($data['category_id']){
+                if($data['keyword']){
+                    $data['annonces'] = Annonces::where('category_id',$data['category_id'])
+                                                ->where('titre','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_annonces',$data);
+                    
+                }
                     $data['annonces'] = Annonces::where('category_id',$data['category_id'])->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_annonces',$data);
@@ -466,6 +570,7 @@ class AnnoncesController extends Controller
         $data['category_id'] = $request->category;
         $data['wilaya_id'] = $request->wilaya;
         $data['commune_id'] = $request->commune;
+        $data['keyword'] = $request->keyword;
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
@@ -478,13 +583,22 @@ class AnnoncesController extends Controller
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
         }
 
-        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id']){
+        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id'] && !$data['keyword']){
             $data['status'] = 501;
             $data['msg'] = "veuillez selectionner au moin un filtre";
             return view('users.annonce.filtre_proffessionnel',$data);
 
         }else{
             if($data['category_id'] && $data['wilaya_id'] && $data['commune_id']){ 
+                if($data['keyword']){
+
+                    $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
+                                    ->whereIn('id',$users_wil_com_ids)
+                                    ->whereIn('id',$users_type_ids)
+                                    ->where('name','Like','%'.$data['keyword'].'%')->get();
+                $data['status'] = 200;
+                return view('users.annonce.filtre_proffessionnel',$data); 
+                }
                 $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
                                     ->whereIn('id',$users_wil_com_ids)
                                     ->whereIn('id',$users_type_ids)->get();
@@ -492,6 +606,15 @@ class AnnoncesController extends Controller
                 return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['category_id'] && $data['wilaya_id']){ 
+                if($data['keyword']){
+                    
+                    $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
+                                    ->whereIn('id',$users_wil_ids)
+                                    ->whereIn('id',$users_type_ids)
+                                    ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
                                     ->whereIn('id',$users_wil_ids)
                                     ->whereIn('id',$users_type_ids)
@@ -500,16 +623,39 @@ class AnnoncesController extends Controller
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['wilaya_id'] && $data['commune_id']){
+                if($data['keyword']){ 
+                    $data['users'] = User::whereIn('id',$users_wil_com_ids)
+                                          ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                          ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::whereIn('id',$users_wil_com_ids)->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['wilaya_id']){
+                if($data['keyword']){
+                    
+                    $data['users'] = User::whereIn('id',$users_wil_ids)
+                                        ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                        ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::whereIn('id',$users_wil_ids)->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['category_id']){
+                if($data['keyword']){
+                    $data['users'] = User::where('category_id',$data['category_id'])
+                                        ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                        ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                    
+                }
                     $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
@@ -522,6 +668,7 @@ class AnnoncesController extends Controller
         $data['category_id'] = $request->category;
         $data['wilaya_id'] = $request->wilaya;
         $data['commune_id'] = $request->commune;
+        $data['keyword'] = $request->keyword;
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
@@ -534,13 +681,22 @@ class AnnoncesController extends Controller
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
         }
 
-        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id']){
+        if(!$data['category_id'] && !$data['wilaya_id'] && !$data['commune_id'] && !$data['keyword']){
             $data['status'] = 501;
             $data['msg'] = "veuillez selectionner au moin un filtre";
             return view('users.annonce.filtre_proffessionnel',$data);
 
         }else{
             if($data['category_id'] && $data['wilaya_id'] && $data['commune_id']){ 
+                if($data['keyword']){
+
+                    $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
+                                    ->whereIn('id',$users_wil_com_ids)
+                                    ->whereIn('id',$users_type_ids)
+                                    ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                 $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
                                     ->whereIn('id',$users_wil_com_ids)
                                     ->whereIn('id',$users_type_ids)->get();
@@ -548,22 +704,54 @@ class AnnoncesController extends Controller
                 return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['category_id'] && $data['wilaya_id']){ 
+                if($data['keyword']){
+                    
+                    $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
+                                    ->whereIn('id',$users_wil_ids)->whereIn('id',$users_type_ids)
+                                    ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)
                                     ->whereIn('id',$users_wil_ids)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['wilaya_id'] && $data['commune_id']){
+                if($data['keyword']){
+                    $data['users'] = User::whereIn('id',$users_wil_com_ids)
+                                        ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                        ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                    
+                }
                     $data['users'] = User::whereIn('id',$users_wil_com_ids)->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['wilaya_id']){
+                if($data['keyword']){
+                    
+                    $data['users'] = User::whereIn('id',$users_wil_ids)
+                                        ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                        ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::whereIn('id',$users_wil_ids)->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);
             }
             elseif($data['category_id']){
+                if($data['keyword']){
+                    
+                    $data['users'] = User::where('category_id',$data['category_id'])
+                                        ->where('is_active',1)->whereIn('id',$users_type_ids)
+                                        ->where('name','Like','%'.$data['keyword'].'%')->get();
+                    $data['status'] = 200;
+                    return view('users.annonce.filtre_proffessionnel',$data);
+                }
                     $data['users'] = User::where('category_id',$data['category_id'])->where('is_active',1)->whereIn('id',$users_type_ids)->get();
                     $data['status'] = 200;
                     return view('users.annonce.filtre_proffessionnel',$data);

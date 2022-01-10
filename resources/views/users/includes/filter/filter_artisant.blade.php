@@ -17,21 +17,25 @@
             <div class="modal-body">
                 <form id="advanced_search" action="{{route('comptes.filtre.artisant')}}" class="clearfix row" name="advanced_search" method="get">
                     @csrf
+                    @isset($category)
+                        <input type="hidden" name="category" value="{{$category->id}}">
+                    @endisset
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                        <label for="categories">{{__('users/annonce.categorie')}}</label>
-                        <select id="category_id" class="show-menu-arrow form-control" name="category">
+                        <label for="keyword">Mot clé</label>
+                        <input type="text" name="keyword" class="show-menu-arrow form-control">
+                        <!-- <select id="category_id" class="show-menu-arrow form-control" name="category">
                             @isset($category)
                             <option value="{{$category->id}}">-- categorie --</option>
                             @else
                             <option value="">-- categorie --</option>
                             @endisset
-                        	@if(count(CategoriesArt())>0)
-                            @foreach(CategoriesArt() as $category)
+                            @if(count(CategoriesArtisanat())>0)
+                            @foreach(CategoriesArtisanat() as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                             @endif
                             
-                        </select>
+                        </select> -->
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                        <label for="location">{{__('users/annonce.wilaya')}}</label>

@@ -52,7 +52,7 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                      <div class="col-md-4">
+                                                    <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="projectinput1">{{__('admin/services.image')}}</label>
                                                             <input type="file" value="{{old('image')}}" id="type"

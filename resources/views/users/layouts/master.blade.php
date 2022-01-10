@@ -136,7 +136,7 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
     });
 $(".my-rating").starRating({
         starSize: 19,
-        //readOnly: true,
+        readOnly: true,
 
         callback: function(currentRating, $el){
 

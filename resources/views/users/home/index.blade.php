@@ -53,7 +53,7 @@
 <section>
     @include('users.includes.publicite.publicite')
     
-    <!-- <div class="overlay1 dm-shadow">
+    <!-- <div class=" dm-shadow">
         <div class="container">
             <div class="row">
 
@@ -118,10 +118,10 @@
     </div> -->
 
 </section>
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');"
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
     data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="mapandslider">
-        <div class="overlay1 dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class=" dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -184,10 +184,10 @@
         </div>
     </div>
 </section><!-- end mapandslider -->
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');"
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
     data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="mapandslider">
-        <div class="overlay1 dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class=" dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
@@ -225,37 +225,58 @@
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div id="" class="clearfix">
-                            <div class="itemss">
-                        @isset($categoriesBlogs)
-                        @foreach($categoriesBlogs as $key=>$category)
-                         <div>
-                            <div class=" text-center">
-                                <h2 class="title text-center">
-                                    <a style="color: DodgerBlue;font-weight: bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
-                                </h2>
-                                
-                                
-                                <div class="itemsss">
-                                    @isset($category->blogs)
-                                    @foreach($category->blogs as $key => $blog)
-                                    @isset($blog->attachements)
+                            <!-- <div class="itemss">
+                                @isset($categoriesBlogs)
+                                @foreach($categoriesBlogs as $key=>$category)
+                                 <div>
+                                    <div class=" text-center">
+                                        <h2 class="title text-center">
+                                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
+                                        </h2>
+                                        <div>
+                                            <a href="{{route('blogs.category',$category->slug)}}" style="float:center">
+                                                <img src="{{asset('BlogCategories/'.$category->name.'/'.$category->image)}}" style="height: 180px;">
+                                            </a>
+                                        </div>
                                         
-                                     <div>
-                                        <a href="{{route('blogs.show',$blog->uuid)}}">
-                                          <img src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}" style="height: 180px;">
-                                        </a>
-                                     </div>
-                                     @endisset
-                                     @endforeach
-                                     @endisset
-                                </div>
-                                
-                            </div>
+                                        <div class="itemsss">
+                                            @isset($category->blogs)
+                                            @foreach($category->blogs as $key => $blog)
+                                            @isset($blog->attachements)
+                                                
+                                             <div>
+                                                <a href="{{route('blogs.show',$blog->uuid)}}">
+                                                  <img src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}" style="height: 180px;">
+                                                </a>
+                                             </div>
+                                             @endisset
+                                             @endforeach
+                                             @endisset
+                                        </div>
+                                        
+                                    </div>
 
-                         </div>
-                         @endforeach
-                         @endisset
-                    </div>
+                                 </div>
+                                 @endforeach
+                                 @endisset
+                                 >
+                            </div> -->
+                    <div class="itemss">
+                            @isset($categoriesBlogs)
+                                @foreach($categoriesBlogs as $key=>$category)
+                                 <div>
+                                    <a href="{{route('blogs.category',$service->slug)}}">
+                                         <img src="{{asset('AnnonceDz/public/BlogCategories/'.$category->name.'/'.$category->image)}}" style="height: 220px;">
+                                    </a>
+                                    <div class=" text-center">
+                                        <h2 class="title text-center" style="color: DodgerBlue;font-size: 15px;">
+                                            <a style="color: DodgerBlue;font-size: 15px;font-weight:bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
+                                        </h2>
+                                    </div>
+                                 </div>
+                                @endforeach
+                            @endisset
+                            </div>
                         </div><!-- end property-slider -->
                     </div><!-- end col-lg-8 -->
                 </div><!-- end row -->
@@ -263,9 +284,9 @@
         </div>
     </div>
 </section><!-- end mapandslider -->
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
-            <div class="overlay1 dm-shadow" style="padding-top: 15px; padding-bottom: 15px;">
+            <div class=" dm-shadow" style="padding-top: 15px; padding-bottom: 15px;">
                 <div class="container">
                     <div class="row">
                         
@@ -339,7 +360,7 @@
         </div>
     </section><!-- end mapandslider -->
 <!-- <section id="two-parallax" class="parallax"  data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-    <div class="overlay1 dm-shadow">
+    <div class=" dm-shadow">
         <div class="container padding-btm40">
             <div class="">
                 <div class="text-center clearfix">
@@ -395,14 +416,14 @@ infinite: true,
 speed: 800,
 autoplay: false,
 autoplaySpeed: 2000,
-slidesToShow: 1,
-slidesToScroll: 1,
+slidesToShow: 2,
+slidesToScroll: 2,
 responsive: [
 {
 breakpoint: 1024,
 settings: {
-slidesToShow: 3,
-slidesToScroll: 3,
+slidesToShow: 2,
+slidesToScroll: 2,
 infinite: true,
 dots: true
 }
@@ -417,8 +438,8 @@ slidesToScroll: 2
 {
 breakpoint: 480,
 settings: {
-slidesToShow: 1,
-slidesToScroll: 1
+slidesToShow: 2,
+slidesToScroll: 2
 }
 }
 

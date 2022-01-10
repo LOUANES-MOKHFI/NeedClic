@@ -1,7 +1,7 @@
 
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
-            <div class="overlay1 dm-shadow" style="padding-top: 5px; padding-bottom: 5px;">
+            <div class=" dm-shadow" style="padding-top: 5px; padding-bottom: 5px;">
                 <div class="container">
                     <div class="row">
                         

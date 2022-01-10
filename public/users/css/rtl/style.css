@@ -487,7 +487,7 @@ section{
 }
 /*___________________ Main Menu ___________________*/
 .main_menu {
-    border-bottom: 5px solid #f1f1f1;
+    
     padding-bottom: 26px;
     background-color: #FFF;
 }
@@ -839,7 +839,7 @@ section{
         text-align: center;
     }
     .main_menu .header-logo {
-        text-align: center;
+        text-align: right;
         margin-bottom: -94px;
         margin-right: 40px;
     }
@@ -952,7 +952,7 @@ section{
     }
     .profile-menu-settings {
         position: absolute;
-        right: 10px;
+        right: 325px;
         top: 4px;
         z-index: 7;
     }
@@ -3601,7 +3601,7 @@ ul.real-estate-cats-widget li{
     display:block;
     vertical-align:bottom;
     background-color:#2B2B2B;
-    border-top:#252525 5px solid;
+    
     z-index:101;
 }
 #footer.bottom {
@@ -3732,7 +3732,7 @@ ul.real-estate-cats-widget li{
 }
 @media only screen and (max-width: 990px) {
     #footer {
-        border-top:#2B2B2B 1px solid;
+        
     }
 
 }
@@ -4440,7 +4440,7 @@ section{
 }
 .profile-menu-settings {
         position: absolute;
-        right: 50;
+        right: 325px;
         top: 3px;
         z-index: 7;
     }
@@ -4550,7 +4550,7 @@ section{
 }
 /*___________________ Main Menu ___________________*/
 .main_menu {
-    border-bottom: 5px solid #f1f1f1;
+    
     padding-bottom: 26px;
     background-color: #FFF;
 }
@@ -4917,7 +4917,7 @@ section{
         text-align: center;
     }
     .main_menu .header-logo {
-        text-align: center;
+        text-align: right;
         margin-bottom: -94px;
          margin-right: 40px;
     }
@@ -7665,7 +7665,7 @@ ul.real-estate-cats-widget li{
     display:block;
     vertical-align:bottom;
     background-color:#2B2B2B;
-    border-top:#252525 5px solid;
+    
     z-index:101;
 }
 #footer.bottom {
@@ -7796,7 +7796,7 @@ ul.real-estate-cats-widget li{
 }
 @media only screen and (max-width: 990px) {
     #footer {
-        border-top:#2B2B2B 1px solid;
+       
     }
 
 }

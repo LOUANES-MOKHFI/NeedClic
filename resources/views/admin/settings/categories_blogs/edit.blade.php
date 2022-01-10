@@ -44,7 +44,7 @@
                                             <div class="form-body">
 
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1">{{__('admin/categories.category')}}</label>
                                                             <input type="text" id="category"
@@ -54,6 +54,16 @@
                                                                    name="name">
                                                             @error("name")
                                                             <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">{{__('admin/services.image')}}</label>
+                                                            <input type="file" value="{{old('image')}}" id="type"
+                                                                   class="form-control" placeholder=" " name="image">
+                                                            @error("image")
+                                                            <span class="text-danger"> {{$message}}  </span>
                                                             @enderror
                                                         </div>
                                                     </div>

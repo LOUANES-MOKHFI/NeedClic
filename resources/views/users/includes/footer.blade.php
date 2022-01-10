@@ -1,8 +1,9 @@
-<footer id="footer">
+<footer id="footer" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
+    data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="container">
             <div class="row">
                 <!-- col #1 -->
-                <div class="logo_footer dark col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="logo_footer col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img alt="" src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" class="footer-logo" style="height: 120px;width: 200px"> 
                     <p class="block">
                         {{Setting()->slogon}}

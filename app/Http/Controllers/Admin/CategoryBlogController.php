@@ -28,11 +28,18 @@ class CategoryBlogController extends Controller
     {	
     	
     	try {
-            $slug = Str::slug($request->name);
-    		$category = CategoryBlogs::create([
-        	'name' => $request->name,
-            'slug' => $slug,
-        	]);
+            if($request->hasFile('image')){
+                $image = $request->file('image');
+                $file_name = $image->getClientOriginalName();
+                $slug = Str::slug($request->name);
+        		$category = CategoryBlogs::create([
+            	'name' => $request->name,
+                'slug' => $slug,
+                'image'=> $file_name,
+            	]);
+                $imageName = $request->image->getClientOriginalName();
+                $request->image->move(public_path('BlogCategories/'.$category->name),$imageName);
+            }
         	return redirect()->route('admin.settings.categories_blogs')->with(['success' => 'La categorie est ajoutée avec success']);
     	} catch (Exception $e) {
     		return redirect()->route('admin.settings.categories_blogs')->with(['error' => 'Verifiez vos informations !!']);
@@ -70,6 +77,16 @@ class CategoryBlogController extends Controller
             'name' => $request->name,
             'slug' => $slug,
         ]);
+        if($request->hasFile('image')){
+                $image = $request->file('image');
+                $file_name = $image->getClientOriginalName();
+                $data['category']->update([
+                    'image' => $file_name,
+                ]);
+                $imageName = $request->image->getClientOriginalName();
+                $request->image->move(public_path('BlogCategories/'.$data['category']->name),$imageName);
+            }
+
 
         return redirect()->route('admin.settings.categories_blogs')->with(['success' => 'La categorie est modifiée avec success']);
 

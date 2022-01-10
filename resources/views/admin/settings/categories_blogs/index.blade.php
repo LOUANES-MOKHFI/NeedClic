@@ -21,6 +21,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>{{__('admin/services.image')}}</th>
                                     <th>{{__('admin/categories.category')}}</th>
                                     <th>{{__('admin/categories.actions')}}</th>
                                 </tr>
@@ -28,6 +29,7 @@
                             <tfoot>
                                 <tr>
                                 <th>ID</th>
+                                    <th>{{__('admin/services.image')}}</th>
                                     <th>{{__('admin/categories.category')}}</th>
                                     <th>{{__('admin/categories.actions')}}</th>
                                 </tr>
@@ -37,6 +39,7 @@
                                 @foreach($categories as $key=>$category)
                                     <tr>
                                         <td>{{$key+1}}</td>
+                                        <td><img style="height: 80px" src="{{asset('AnnonceDz/public/BlogCategories/'.$category->name.'/'.$category ->image)}}"></td>
                                         <td>{{$category -> name}}</td>
                                         <td>
                                             <a href="{{route('admin.settings.categories_blogs.edit',$category -> id)}}" class="btn btn-bordered btn-warning waves-effect waves-light"
