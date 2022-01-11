@@ -403,7 +403,7 @@ section{
     padding: 0px;
     top: 54px;
     border-radius: 0px 0px 2px 2px;
-    left: -112px;
+    left: -65px;
     color: rgb(255, 255, 255);
 }
 .profile-menu-settings .dropdown-menu li {
@@ -961,7 +961,7 @@ section{
 }
     .profile-menu-settings {
         position: absolute;
-        right: 325px;
+        right: 270px;
         top: 80px;
         z-index: 7;
     }
