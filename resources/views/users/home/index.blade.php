@@ -129,7 +129,7 @@
                             <div class="first" data-effect="slide-bottom">
                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                     <a href="{{route('categories.proffessionnelles','Artisant')}}">
-                                    <img class="img-responsive" src="{{asset('users/img/home/artisant2.png')}}" alt="NeedClic" style="height: 200px;">
+                                    <img class="img-responsive" src="{{asset('users/img/home/artisant3.png')}}" alt="NeedClic" style="height: 200px;">
                                     </a>
                                     
                                 </div>
@@ -144,7 +144,7 @@
                             <div class="first" data-effect="slide-bottom">
                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                     <a href="{{route('categories.proffessionnelles','Ingénieure')}}">
-                                       <img class="img-responsive" src="{{asset('users/img/home/ingenieur2.png')}}" alt="" style="height: 200px;">
+                                       <img class="img-responsive" src="{{asset('users/img/home/ingenieur3.png')}}" alt="" style="height: 200px;">
                                     </a>                         
 
                                 </div>
@@ -195,7 +195,7 @@
                         <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.artisanat','Artisanat')}}">
-                                <img class="img-responsive" src="{{asset('users/img/home/artisanatR.jpg')}}" alt="NeedClic" >
+                                <img class="img-responsive" src="{{asset('users/img/home/artisanatR1.png')}}" alt="NeedClic" >
                                 </a>
                             </div>
                             
@@ -213,7 +213,7 @@
                         <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.particulier','Particulier')}}">
-                                    <img class="img-responsive" src="{{asset('users/img/home/particulier.jpg')}}" alt="NeedClic">
+                                    <img class="img-responsive" src="{{asset('users/img/home/particulier1.png')}}" alt="NeedClic">
                                 </a>
                                 
                             </div>
@@ -265,7 +265,7 @@
                             @isset($categoriesBlogs)
                                 @foreach($categoriesBlogs as $key=>$category)
                                  <div>
-                                    <a href="{{route('blogs.category',$service->slug)}}">
+                                    <a href="{{route('blogs.category',$category->slug)}}">
                                          <img src="{{asset('AnnonceDz/public/BlogCategories/'.$category->name.'/'.$category->image)}}" style="height: 220px;">
                                     </a>
                                     <div class=" text-center">
@@ -326,22 +326,32 @@
                                                         <a  class="slide-agent" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}"></a>
                                                         @if($user->type_compte == 0)
                                                             <span class="text-info type">
-                                                                {{$user->category->name}}
+                                                                @isset($user->category)
+                                                                    {{$user->category->name}}
+                                                                @endisset
                                                             </span>
                                                         @elseif($user->type_compte == 1)
                                                             <span class="text-warning type">
-                                                                {{$user->category->name}}
+                                                                @isset($user->category)
+                                                                    {{$user->category->name}}
+                                                                @endisset
                                                             </span>
                                                         @elseif($user->type_compte == 2)
                                                             <span class="text-danger type">
-                                                                {{$user->category->name}}
+                                                                @isset($user->category)
+                                                                    {{$user->category->name}}
+                                                                @endisset
                                                             </span>
                                                         @elseif($user->type_compte == 3)
                                                             <span class="text-success type">
                                                                 {{DetailUser($user->id) ? DetailUser($user->id)->service->name : "/"}}   
                                                             </span>
                                                         @endif
-                                                        <span class="price">{{$user->wilaya->name}}</span>
+                                                        <span class="price">
+                                                            @isset($user->wilaya)
+                                                                {{$user->wilaya->name}}
+                                                            @endisset
+                                                        </span>
                                                         
                                                     </div>
                                                 </div>

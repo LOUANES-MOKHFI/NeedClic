@@ -42,6 +42,7 @@
                         @if(!empty(Setting()->email))<a href="{{Setting()->email}}" class="social fa fa-google-plus"></a>@endif
                         @if(!empty(Setting()->linkedin))<a href="{{Setting()->linkedin}}" class="social fa fa-linkedin"></a>@endif
                         @if(!empty(Setting()->instagram))<a href="{{Setting()->instagram}}" class="social fa fa-instagram"></a>@endif
+                        @if(!empty(Setting()->phone))<a href="tel:{{Setting()->phone}}" class="social fa fa-phone"></a>@endif
                     </p><!-- /social -->
                 </div>
                 <!-- <div class="spaced col-md-3 col-sm-4 hidden-xs">

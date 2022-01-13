@@ -35,9 +35,9 @@
 
 	                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"  style="margin-bottom:20px ">
 	                        <article class="blog-wrap">
-	                            <div class="ImageWrapper blog-media">
+	                            <div class="ImageWrapper blog-media text-center">
                                     @isset($blog->attachements)
-	                                <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}"  alt="">
+	                                <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}"  alt="" style="height: 250px">
                                     @endisset
 	                                <div class="ImageOverlayH"></div>
 	                                <div class="Buttons StyleMg">
