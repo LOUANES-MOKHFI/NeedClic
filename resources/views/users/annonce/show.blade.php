@@ -118,7 +118,7 @@
                                                 </span>
                                             </li>
                                             <li class="price">
-                                                <strong class="key">Nom de boutique</strong>
+                                                <strong class="key">Nom de la boutique</strong>
                                                 <span class="value"><a href="{{route('boutique',$annonce->user->uuid)}}">{{$annonce->user->name}}</a></span>
                                             </li>
                                             <li class="price">

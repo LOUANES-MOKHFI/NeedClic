@@ -26,7 +26,7 @@ return [
    'register'          => "S'inscrire",
 
    'login'             => 'Se connecter',
-   'forget_password'   => "Mot de passe oublie ?",
+   'forget_password'   => "Mot de passe oublié ?",
    'email'             => "Email",
    'password'          => "mot de passe",
    'remember_me'       => "Se souvenir de moi",

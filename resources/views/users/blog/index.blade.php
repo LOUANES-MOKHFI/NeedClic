@@ -16,7 +16,7 @@
         </ul>
     </div>
     <div style="float: right;">
-            <a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_blog" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+            <a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_blog" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 
         
         
@@ -28,6 +28,15 @@
         <div class="row">
 
             <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
+                <div class="title">
+                            @isset($blogs)
+                            @if($blogs->count()==0)
+                                <div class="alert alert-danger text-center" id="msg">
+                                    Aucune blog n'existe dans cette catégorie
+                                </div>
+                            @endif
+                            @endisset
+                        </div>
             	@isset($blogs)
                 <div class="blog_container clearfix">
                 	

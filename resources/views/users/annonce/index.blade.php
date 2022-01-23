@@ -18,6 +18,7 @@
     @include('users.includes.filter.filter_particulier')
     @include('users.includes.filter.filter_artisanat')
     @include('users.includes.modal.UnAuthLike')
+    
 <div class="col-lg-12">
 	<div style="float: left;">
 		<ul class="breadcrumb">
@@ -27,7 +28,7 @@
 	</div>
 	<div style="float: right;">
 		@isset($service)
-			<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+			<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 		@endisset
 
 		@isset($category)
@@ -56,13 +57,13 @@
 	                        @if($annonces->count()==0)
 								<div class="alert alert-danger text-center" id="msg">
 									@isset($service)
-									Aucun annonce existe dans ce service
+									Aucune annonce n'existe dans cette catégorie
 									@endisset
 									@isset($type)
 									Aucun annonce existe dans ce type
 									@endisset
 									@isset($category)
-									Aucun annonce existe dans cette categorie
+									Aucune annonce n'existe dans cette catégorie
 									@endisset
 								</div>
 							@endif

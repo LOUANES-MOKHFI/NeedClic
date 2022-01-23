@@ -91,6 +91,17 @@ Paramètres générals
                     </a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="box-content bg-violet text-white">
+                    <a href="{{route('admin.settings.images')}}" style="color:white">
+                        <div class="statistics-box with-icon">
+                            <i class="ico small fa fa-gears"></i>
+                            <p class="text text-white"  style="font-size:18px">Images des comptes</p>
+                            <h2 class="counter"></h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
 			
 		<!-- .row -->
 

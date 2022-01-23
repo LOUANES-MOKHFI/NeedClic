@@ -488,7 +488,7 @@ section{
 /*___________________ Main Menu ___________________*/
 .main_menu {
     
-    padding-bottom: 26px;
+    padding-bottom: 0px;
     background-color: #FFF;
 }
 .main_menu .wrapper {
@@ -4551,7 +4551,7 @@ section{
 /*___________________ Main Menu ___________________*/
 .main_menu {
     
-    padding-bottom: 26px;
+    padding-bottom: 0px;
     background-color: #FFF;
 }
 .main_menu .wrapper {

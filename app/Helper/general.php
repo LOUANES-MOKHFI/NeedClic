@@ -9,6 +9,21 @@ define('CAT_ARTISANAT',3);
 define('CAT_ING',4);
 
 
+        
+        
+
+function artisant(){
+     return App\Models\ImageCompte::where('id',1)->first();
+ }
+function ingenieur(){
+     return App\Models\ImageCompte::where('id',2)->first();
+ }
+function particulier(){
+     return App\Models\ImageCompte::where('id',3)->first();
+ }
+function artisanat(){
+     return App\Models\ImageCompte::where('id',4)->first();
+ }   
 
 function Wilayas(){
      return App\Models\Wilaya::all();

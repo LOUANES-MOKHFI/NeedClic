@@ -23,9 +23,9 @@
 	</div>
 	<div style="float: right;">
 		    @if($category->category_compte == 2)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 4)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@endif
 		
 	</div>
@@ -40,7 +40,7 @@
 	            	@if($users->count() == 0)
 	            		<div class="col-md-12 boxes">
 			        		<div class="alert alert-danger text-center" id="msg">
-								Aucun Boutique existe dans cette categorie
+								Aucun compte n'existe dans cette catégorie
 							</div>
 			        	</div>
 	            	@endif

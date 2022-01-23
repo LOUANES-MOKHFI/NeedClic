@@ -1,20 +1,20 @@
-<div class="main_menu fixed_menu parallax" id="menu" style="background-image: url('/users/img/01_parallax.jpeg');"
-    data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-        <div class="container">
-            <div class="wrapper">
+<div class="main_menu fixed_menu parallax">
+   
+        <div class="container"  >
+            <div class="wrapper" >
                 <div class="header-logo">
                     <a href="{{route('home')}}"><img src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive" style="height: 90px;width: 100px"></a>
                 </div> <!-- End .header-logo -->
                 <div class="btn-cnt-mn">
                 
-                   <!--  <a href="#" class="dropdown-item btn-sumbit-menu" data-toggle="modal" data-target="#search" data-original-title="Rechercher un annonce" style="background-color: DodgerBlue;">
+                   <!--  <a href="#" class="dropdown-item btn-sumbit-menu" data-toggle="modal"   data-target="#search" data-original-title="Rechercher un annonce" style="background-color: DodgerBlue;">
                         <i class="fa fa-search"></i>
                     </a> -->
 
                     <div class="dropdown profile-menu-settings" style="">
 
                         <button class="btn-dropdown dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true">
-                            <img src="/users/img/home/login-icone.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="35" height="35" style="color: DodgerBlue" >
+                            <img src="/users/img/home/login-ic.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="35" height="35" style="color: DodgerBlue" >
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" style="background-color: DodgerBlue;">      
                             @guest                            
@@ -111,4 +111,6 @@
                 <!-- End Menu __________ -->
             </div>  <!-- End .wrapper -->
         </div> <!-- End .container -->
+   
+        
     </div>

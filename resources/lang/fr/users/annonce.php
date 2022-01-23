@@ -1,7 +1,7 @@
 <?php
 return [
    'home'              => 'Accueil',
-   'all_annonces'      => 'Tout les Annonces',
+   'all_annonces'      => 'Toutes les Annonces',
    'proffessionnelles' => 'Proffessionnelles',
    'advenced_search'   => 'Recherche Avancer',
    'type_annonce'      => "Type d'annonce",
@@ -11,7 +11,7 @@ return [
    'service'           => "Service",
    'search'            => "Rechercher",
    'new_annonce'       => "NOUVEAUX ANNONCES",
-   'details'           => "Details",
+   'details'           => "Détails",
    'description'       => "Description",
    'type'              => "Type",
    'prix'              => "Prix",

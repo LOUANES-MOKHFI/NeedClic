@@ -11,6 +11,7 @@ use App\Models\Service;
 use App\Models\Publicite;
 use App\Models\CategoryAnnonces;
 use App\Models\CategoryBlogs;
+use App\Models\ImageCompte;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,11 @@ class HomeController extends Controller
     {
         $data = [];
         $data['categoriesBlogs'] = CategoryBlogs::all();
+        $data['artisant'] = ImageCompte::where('id',1)->first();
+        $data['ingenieur'] = ImageCompte::where('id',2)->first();
+        $data['particulier'] = ImageCompte::where('id',3)->first();
+        $data['artisanat'] = ImageCompte::where('id',4)->first();
+        
         $data['categories'] = CategoryAnnonces::all();
         $data['services'] = Service::all();
         $data['wilayas'] = Wilaya::all();

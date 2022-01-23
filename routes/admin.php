@@ -76,6 +76,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 		        Route::post('update/{uuid}','AbonnementController@update')->name('admin.settings.abonnements.update');
 		        Route::get('delete/{uuid}','AbonnementController@destroy')->name('admin.settings.abonnements.delete');
 		    });
+		    ////images 
+			Route::group(['prefix' => 'images',/*'middleware' => 'can:images'*/],function(){
+		        Route::get('/','ImageCompteController@index')->name('admin.settings.images');
+		        Route::get('edit/{uuid}','ImageCompteController@edit')->name('admin.settings.images.edit');
+		        Route::post('update/{uuid}','ImageCompteController@update')->name('admin.settings.images.update');
+		        Route::get('delete/{uuid}','ImageCompteController@destroy')->name('admin.settings.images.delete');
+		    });
 			
 		});
 		///Routes Admin

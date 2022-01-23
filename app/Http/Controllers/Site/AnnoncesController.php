@@ -81,7 +81,7 @@ class AnnoncesController extends Controller
 
         if($type == 'Ingénieure'){
             $data['categories'] = CategoryAnnonces::where('category_compte',CAT_ING)->get();
-        }elseif($type == 'Artisant'){
+        }elseif($type == 'Artisan'){
             $data['categories'] = CategoryAnnonces::where('category_compte',CAT_ART)->get();
         }elseif($type == 'Particulier'){
             $data['categories'] = CategoryAnnonces::where('category_compte',CAT_PART)->get();

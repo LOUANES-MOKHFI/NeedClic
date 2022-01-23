@@ -20,7 +20,7 @@
     	</ul>
 	</div>
 	<div style="float: right;">
-		<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+		<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 	</div>
     
 </div>

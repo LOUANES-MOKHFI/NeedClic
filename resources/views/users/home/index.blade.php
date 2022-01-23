@@ -58,8 +58,8 @@
             <div class="row">
 
                 <div class="boxes col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                	<div class="boxes text-center" style="background-color: DodgerBlue;padding-top:12px">
-                		<h3 style="color: white;font-weight: bold;">{{__('users/home.proffessionnelles')}}</h3>
+                	<div class="boxes text-center" style="background-color: black;padding-top:12px">
+                		<h3 style="color: white;">{{__('users/home.proffessionnelles')}}</h3>
                 	</div>
 	                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 	                    <div class="first" data-effect="slide-bottom">
@@ -70,7 +70,7 @@
 	                            
 	                        </div>
 	                        <h2 class="title text-center">
-	                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Artisant')}}"> {{__('users/home.artisant')}}</a>
+	                            <a style="color: black" href="{{route('categories.proffessionnelles','Artisant')}}"> {{__('users/home.artisant')}}</a>
 	                        </h2>
 	                    </div>
 	                </div>
@@ -83,14 +83,14 @@
 
 	                        </div>
 	                        <h2 class="title text-center">
-	                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Ingénieure')}}"> {{__('users/home.ingenieur')}}</a>
+	                            <a style="color: black" href="{{route('categories.proffessionnelles','Ingénieure')}}"> {{__('users/home.ingenieur')}}</a>
 	                        </h2>
 	                    </div>
 	                </div>
                 </div>
                 <div class="boxes col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                	<div class="boxes text-center"  style="background-color: DodgerBlue;padding-top:12px">
-                		<h3 style="color: white;font-weight: bold;">{{__('users/home.boutique')}}</h3>
+                	<div class="boxes text-center"  style="background-color: black;padding-top:12px">
+                		<h3 style="color: white;">{{__('users/home.boutique')}}</h3>
                 	</div> 
 	                <div class="items">
 	                	@isset($services)
@@ -102,7 +102,7 @@
 
 					     	<div class="boxes text-center">
 					     		<h2 class="title text-center">
-	                            	<a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.service',$service->slug)}}"> {{$service->name}}</a>
+	                            	<a style="color: black" href="{{route('annonces.service',$service->slug)}}"> {{$service->name}}</a>
 	                        	</h2>
 					     	</div>
 					     </div>
@@ -118,25 +118,24 @@
     </div> -->
 
 </section>
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');"
     data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="mapandslider">
         <div class=" dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                        
-                            <div class="first" data-effect="slide-bottom">
-                                <div class="ImageWrapper big-ImageWrapper boxes_img">
-                                    <a href="{{route('categories.proffessionnelles','Artisant')}}">
-                                    <img class="img-responsive" src="{{asset('users/img/home/artisant3.png')}}" alt="NeedClic" style="height: 200px;">
-                                    </a>
-                                    
-                                </div>
-                                <h2 class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                    <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Artisant')}}"> {{__('users/home.artisant')}}</a>
-                                </h2>
-                            </div><!-- end boxes -->
+                        <div class="first" data-effect="slide-bottom">
+                            <div class="ImageWrapper big-ImageWrapper boxes_img">
+                                <a href="{{route('categories.proffessionnelles','Artisan')}}">
+                                <img class="img-responsive" src="{{asset('AnnonceDz/public/Compte/'.$artisant->id.'/'.$artisant ->image)}}" alt="NeedClic" style="height: 200px;">
+                                </a>
+                                
+                            </div>
+                            <h2 class="title text-center" style="color: black;font-size: 15px;">
+                                <a style="color: black" href="{{route('categories.proffessionnelles','Artisant')}}"> {{$artisant->name}}</a>
+                            </h2>
+                        </div><!-- end boxes -->
                         
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -144,19 +143,19 @@
                             <div class="first" data-effect="slide-bottom">
                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                     <a href="{{route('categories.proffessionnelles','Ingénieure')}}">
-                                       <img class="img-responsive" src="{{asset('users/img/home/ingenieur3.png')}}" alt="" style="height: 200px;">
+                                       <img class="img-responsive" src="{{asset('AnnonceDz/public/Compte/'.$ingenieur->id.'/'.$ingenieur ->image)}}" alt="" style="height: 200px;">
                                     </a>                         
 
                                 </div>
-                                <h2 class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                    <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.proffessionnelles','Ingénieure')}}"> {{__('users/home.ingenieur')}}</a>
+                                <h2 class="title text-center" style="color: black;font-size: 15px;">
+                                    <a style="color: black" href="{{route('categories.proffessionnelles','Ingénieure')}}"> {{$ingenieur->name}}</a>
                                 </h2>
                             </div><!-- end boxes -->
                         
                     </div><!-- end col-lg-4 -->
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="text-center"  style="color: DodgerBlue;padding-top:0px">
-                            <h3 style="color: DodgerBlue;font-weight: bold;">{{__('users/home.boutique')}}</h3>
+                        <div class="text-center"  style="color: black;padding-top:0px">
+                            <h3 style="color: black;">{{__('users/home.boutique')}}</h3>
                         </div>
                             <div class="items">
                             @isset($services)
@@ -167,9 +166,9 @@
                                     </a>
 
                                     <div class=" text-center">
-                                        <h2 class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                            <a style="color: DodgerBlue;font-size: 15px;">
-                                <a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.service',$service->slug)}}"> {{$service->name}}</a>
+                                        <h2 class="title text-center" style="color: black;font-size: 15px;">
+                                            <a style="color: black;font-size: 15px;">
+                                <a style="color: black" href="{{route('annonces.service',$service->slug)}}"> {{$service->name}}</a>
                                         </h2>
                                     </div>
                                  </div>
@@ -184,7 +183,7 @@
         </div>
     </div>
 </section><!-- end mapandslider -->
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');"
     data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="mapandslider">
         <div class=" dm-shadow" style="padding-top: 20px; padding-bottom: 20px;">
@@ -195,13 +194,13 @@
                         <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.artisanat','Artisanat')}}">
-                                <img class="img-responsive" src="{{asset('users/img/home/artisanatR1.png')}}" alt="NeedClic" >
+                                <img class="img-responsive" src="{{asset('AnnonceDz/public/Compte/'.$artisanat->id.'/'.$artisanat ->image)}}" alt="NeedClic" >
                                 </a>
                             </div>
                             
-                            <p class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.artisanat','Artisanat')}}"> 
-                                {{__('users/home.artisanat')}}
+                            <p class="title text-center" style="color: black;font-size: 15px;">
+                                <a style="color: black" href="{{route('categories.artisanat','Artisanat')}}"> 
+                                {{$artisanat->name}}
                                  </a>
                             </p>
                            
@@ -213,12 +212,12 @@
                         <div class="first" data-effect="slide-bottom">
                             <div class="ImageWrapper big-ImageWrapper boxes_img">
                                 <a href="{{route('categories.particulier','Particulier')}}">
-                                    <img class="img-responsive" src="{{asset('users/img/home/particulier1.png')}}" alt="NeedClic">
+                                    <img class="img-responsive" src="{{asset('AnnonceDz/public/Compte/'.$particulier->id.'/'.$particulier ->image)}}" alt="NeedClic">
                                 </a>
                                 
                             </div>
-                            <p class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                <a style="color: DodgerBlue;font-weight: bold" href="{{route('categories.particulier','Particulier')}}"> {{__('users/home.particulier')}}</a>
+                            <p class="title text-center" style="color: black;font-size: 15px;">
+                                <a style="color: black" href="{{route('categories.particulier','Particulier')}}"> {{$particulier->name}}</a>
                             </p>
                         </div><!-- end boxes -->
                         
@@ -231,7 +230,7 @@
                                  <div>
                                     <div class=" text-center">
                                         <h2 class="title text-center">
-                                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
+                                            <a style="color: black" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
                                         </h2>
                                         <div>
                                             <a href="{{route('blogs.category',$category->slug)}}" style="float:center">
@@ -269,8 +268,8 @@
                                          <img src="{{asset('AnnonceDz/public/BlogCategories/'.$category->name.'/'.$category->image)}}" style="height: 220px;">
                                     </a>
                                     <div class=" text-center">
-                                        <h2 class="title text-center" style="color: DodgerBlue;font-size: 15px;">
-                                            <a style="color: DodgerBlue;font-size: 15px;font-weight:bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
+                                        <h2 class="title text-center" style="color: black;font-size: 15px;">
+                                            <a style="color: black;font-size: 15px;" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
                                         </h2>
                                     </div>
                                  </div>
@@ -284,7 +283,7 @@
         </div>
     </div>
 </section><!-- end mapandslider -->
-<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+<section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
             <div class=" dm-shadow" style="padding-top: 15px; padding-bottom: 15px;">
                 <div class="container">
@@ -383,7 +382,7 @@
 					     <div>
 					     	<div class="boxes text-center">
 					     		<h2 class="title text-center">
-	                            	<a style="color: DodgerBlue;font-weight: bold" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
+	                            	<a style="color: black" href="{{route('blogs.category',$category->slug)}}"> {{$category->name}}</a>
 	                        	</h2>
 	                        	
 					     		

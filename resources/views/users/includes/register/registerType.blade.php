@@ -160,30 +160,30 @@
             </li>
             <li>
                 <a href="{{route('register.ingenieur')}}" class="bg-white" style="font-size: 16px;color: black">
-                  <img src="{{asset('users/img/home/proff.svg')}}" style="height: 100px;width: 90px;margin-top: 5px">
+                  <img src="{{asset('AnnonceDz/public/Compte/'.ingenieur()->id.'/'.ingenieur() ->image)}}" style="height: 100px;width: 90px;margin-top: 5px">
                   <br>
-                  {{__('users/auth.ingenieur')}}
+                  @if(ingenieur()->count()>0) {{ingenieur()->name}} @endif
                 </a>
             </li>
             <li>
                	<a href="{{route('register.artisant')}}" class="bg-white" style="font-size: 16px;color: black">
-                  <img src="{{asset('users/img/home/artisanatR.png')}}" style="height: 100px;width: 90px;margin-top: 5px">
+                  <img src="{{asset('AnnonceDz/public/Compte/'.artisant()->id.'/'.artisant() ->image)}}" style="height: 100px;width: 90px;margin-top: 5px">
                   <br>
-                  {{__('users/auth.artisant')}}
-               	</a>
+                  @if(artisant()->count()>0) {{artisant()->name}} @endif               	
+                </a>
             </li>
             <li>
                 <a href="{{route('register.artisanat')}}" class="bg-white" style="font-size: 16px;color: black">
-                  <img src="{{asset('users/img/home/artisanat.png')}}" style="height: 100px;width: 90px;margin-top: 5px">
+                  <img src="{{asset('AnnonceDz/public/Compte/'.artisanat()->id.'/'.artisanat() ->image)}}" style="height: 100px;width: 90px;margin-top: 5px">
                  <br>
-                  {{__('users/auth.artisanat')}}
+                  @if(artisanat()->count()>0) {{artisanat()->name}} @endif
                 </a>
             </li>
             <li>
                 <a href="{{route('register.particulier')}}" class="bg-white" style="font-size: 16px;color: black">
-                  <img src="{{asset('users/img/home/artisan.png')}}" style="height: 100px;width: 90px;margin-top: 5px">
+                  <img src="{{asset('AnnonceDz/public/Compte/'.particulier()->id.'/'.particulier() ->image)}}" style="height: 100px;width: 90px;margin-top: 5px">
                  <br>
-                  {{__('users/auth.particulier')}}
+                  @if(particulier()->count()>0) {{particulier()->name}} @endif
                 </a>
             </li>
             <li>

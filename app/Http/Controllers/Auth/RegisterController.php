@@ -53,11 +53,11 @@ class RegisterController extends Controller
         //$user->notify(new RegistedUser());
         if($request->type_compte != 4){
         return $this->registered($request, $user)
-                        ?: redirect('/login')->with('success',"Votre compte a bien étè crée,veuillez attendre que l'administrateur accepte votre demande");
+                        ?: redirect('/login')->with('success',"Votre compte a bien été crée,veuillez attendre que l'administrateur accepte votre demande.");
         }
         else{
              return $this->registered($request, $user)
-                        ?: redirect('/login')->with('success',"Votre compte a bien étè crée");
+                        ?: redirect('/login')->with('success',"Votre compte a bien étè crée.");
         }
     }
     
