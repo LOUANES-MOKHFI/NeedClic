@@ -1,11 +1,10 @@
-<footer id="footer" class="parallax" style="background-image: url('/users/img/01_parallax.jpeg');"
-    data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+<footer id="footer" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="container">
             <div class="row">
                 <!-- col #1 -->
                 <div class="logo_footer col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <img alt="" src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" class="footer-logo" style="height: 120px;width: 200px"> 
-                    <p class="block">
+                    <p class="block" style="color:black;">
                         {{Setting()->slogon}}
                     </p>
                 </div>
@@ -32,8 +31,8 @@
                 <!-- /col #3 -->
                 <!-- col #4 -->
                 <div class="spaced col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <h4>{{__('users/footer.about')}}</h4>
-                    <p>
+                    <h4 style="color:black;">{{__('users/footer.about')}}</h4>
+                    <p style="color:black;">
                         {{Setting()->about}}
                     </p>
                     <p class="block"><!-- social -->

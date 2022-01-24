@@ -1,6 +1,5 @@
-<div class="main_menu fixed_menu parallax">
-   
-        <div class="container"  >
+<div class="main_menu fixed_menu parallax" id="one-parallax" style="" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+        <div class="container">
             <div class="wrapper" >
                 <div class="header-logo">
                     <a href="{{route('home')}}"><img src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive" style="height: 90px;width: 100px"></a>
@@ -78,7 +77,7 @@
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" style="background-color: black;">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

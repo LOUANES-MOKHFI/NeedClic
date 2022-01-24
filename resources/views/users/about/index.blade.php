@@ -6,7 +6,7 @@
 
 @endsection
 @section('content')
-  <section class="generalwrapper clearfix">
+  <section class="generalwrapper clearfix parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
             <div class="container">
                 <div class="row">
                     <div class="text-center clearfix">

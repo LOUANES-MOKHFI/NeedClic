@@ -11,7 +11,7 @@
 @endsection
 @section('content')
 
-<section class="generalwrapper dm-shadow clearfix">
+<section class="generalwrapper dm-shadow clearfix parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="container">
         <div class="row">
             

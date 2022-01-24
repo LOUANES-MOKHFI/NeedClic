@@ -12,7 +12,7 @@
 @section('content')
     @include('users.includes.publicite.publicite')
 
-<div class="col-lg-12">
+<div class="col-lg-12 parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div style="float: left;">
 		<ul class="breadcrumb">
         	<li><a href="{{route('home')}}">{{__('users/annonce.home')}}</a></li>
@@ -20,11 +20,11 @@
     	</ul>
 	</div>
 	<div style="float: right;">
-		<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+		<a class="btn btn-bordered btn-info" style="background-color: black;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 	</div>
     
 </div>
-<section class="generalwrapper dm-shadow clearfix">
+<section class="generalwrapper dm-shadow clearfix parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 	<div class="container">
 	    <div class="row">
 	        <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
@@ -46,7 +46,7 @@
 			                        	</a>
 			                        </div>
 			                        <h2 class="title">
-			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
+			                            <a style="color: black;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
 			                            <small class="small_title">
 			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}" data-uuid="{{$user->uuid}}" data-id="{{$user->id}}"></div>
 			                            </small>

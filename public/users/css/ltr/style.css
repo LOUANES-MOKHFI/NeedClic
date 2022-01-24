@@ -843,7 +843,7 @@ section{
     }
     .main_menu .header-logo {
         text-align: right;
-        margin-bottom: -94px;
+        margin-bottom: -82px;
         margin-right: 40px;
     }
     .main_menu .header-logo img{
@@ -867,7 +867,7 @@ section{
     }
     .main_menu .navbar-nav {
         margin:0;
-        background: #4dc2e6;
+        background: black;
     }
     .main_menu .navbar-toggle {
         float:left;
@@ -988,7 +988,7 @@ section{
         top:3px;
     }
     .profile-menu-settings{
-    top: 4px;
+    top: 15px;
     }
     .main_menu a.btn-sumbit-menu {
         top: 4px;
@@ -2269,7 +2269,7 @@ iframe, embed, object {
     position:relative;
     overflow:hidden;
     margin-bottom:0px;
-    background:#ffffff;
+    
     
 }
 .boxes .title {

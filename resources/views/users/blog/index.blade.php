@@ -8,7 +8,7 @@
 @section('content')
     @include('users.includes.filter.filter_blog')
 
-<div class="col-lg-12">
+<div class="col-lg-12 parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div style="float: left;">
         <ul class="breadcrumb">
             <li><a href="{{route('home')}}">{{__('users/blog.home')}}</a></li>
@@ -23,7 +23,7 @@
     </div>
     
 </div>
-<section class="generalwrapper dm-shadow clearfix">
+<section class="generalwrapper dm-shadow clearfix parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class="container">
         <div class="row">
 

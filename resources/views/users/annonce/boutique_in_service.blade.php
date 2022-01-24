@@ -12,7 +12,7 @@
 @section('content')
     @include('users.includes.publicite.publicite')
 
-<div class="col-lg-12">
+<div class="col-lg-12 parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     
     <div style="float: left;">
 		<ul class="breadcrumb">
@@ -25,7 +25,7 @@
 	</div>
     
 </div>
-<section class="generalwrapper dm-shadow clearfix">
+<section class="generalwrapper dm-shadow clearfix parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 	<div class="container">
 	    <div class="row">
 	        <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
