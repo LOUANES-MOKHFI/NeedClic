@@ -7,9 +7,14 @@
     .red{
         color: red;
     }
-    @media(min-width: 676px){
-        .imgg{
-            height: 220px;
+    @media(max-width: 767px){
+        .immg{
+            height: 160px;
+        }
+    }
+    @media(min-width: 767px){
+        .immg{
+            height: 250px;
         }
     }
 </style>
@@ -62,7 +67,7 @@
                             <ul class="pro-info_widget">
                                 <li class="nav-item">
                                     <a href="#" class="">
-                                        <img class="img-responsive img-thumbnail imgg width-100-100" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="">
+                                        <img class="img-responsive img-thumbnail imgg width-100-100" src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="">
                                     </a>
                                 </li><!-- /.nav-item -->
 
@@ -126,7 +131,7 @@
                                             <div class="boxes first" data-effect="slide-bottom">
                                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                                     <a href="{{route('users.albums.showAlbum',$album->uuid)}}" style="color:Dodgerblue">
-                                                    <img class="img-responsive" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$album->attachements[0]->file_name)}}" alt="{{$album->name}}">
+                                                    <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$album->attachements[0]->file_name)}}" alt="{{$album->name}}">
                                                     </a>
                                                     <div class="Buttons StyleSc">
                                                        
@@ -153,7 +158,7 @@
                                             <div class="boxes first" data-effect="slide-bottom">
                                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                                     <a href="{{route('annonces.show',$annonce->uuid)}}">
-                                                    <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+                                                    <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
                                                     </a>
 
                                                     <!-- <div class="box_type">{{$annonce->prix}}</div> -->

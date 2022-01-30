@@ -41,7 +41,7 @@
                                 @foreach($services as $key=>$service)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td><img style="height: 80px" src="{{asset('AnnonceDz/public/Service/'.$service->name.'/'.$service ->image)}}"></td>
+                                        <td><img style="height: 80px" src="{{asset('AnnonceDz/public/Service/'.$service->id.'/'.$service ->image)}}"></td>
                                         <td>{{$service ->name}}</td>
                                         <td>{{$service ->description ? $service ->description : '/'}}</td>
 

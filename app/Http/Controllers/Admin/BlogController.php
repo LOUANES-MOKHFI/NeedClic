@@ -66,7 +66,7 @@ class BlogController extends Controller
 
                     ///Move Attachements
                     $imageName = $attachement->getClientOriginalName();
-                    $attachement->move(public_path('Blog/'.$blog->titre),$imageName);
+                    $attachement->move(public_path('Blog/'.$blog->id),$imageName);
                 }
             }
             return redirect()->route('admin.blogs')->with(['success' => "Le blog a étè ajoutée avec success"]);
@@ -151,7 +151,7 @@ class BlogController extends Controller
             return redirect()->back()->with(['error'=>'cette blog n\'existe pas']);
         }
         $data['attachement']->delete();
-        Storage::disk('blogs')->delete($blog->titre.'/'.$data['attachement']->file_name);
+        Storage::disk('blogs')->delete($blog->id.'/'.$data['attachement']->file_name);
 
         return redirect()->back()->with(['success' => "L'image a étè supprimée avec success"]);
     }
@@ -179,7 +179,7 @@ class BlogController extends Controller
 
                     ///Move Attachements
                     $imageName = $attachement->getClientOriginalName();
-                    $attachement->move(public_path('Blog/'.$blog->titre),$imageName);
+                    $attachement->move(public_path('Blog/'.$blog->id),$imageName);
                 }
         return redirect()->back()->with(['success' => "L'image a étè ajouter avec success"]);
 

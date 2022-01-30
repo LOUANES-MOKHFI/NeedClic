@@ -43,7 +43,7 @@ class CategoryAnnonceController extends Controller
         	]);
             ///Move Image
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Category/'.$category->name),$imageName);
+                $request->image->move(public_path('Category/'.$category->id),$imageName);
 
             }
         	return redirect()->route('admin.settings.categories_annonces')->with(['success' => 'La categorie est ajoutée avec success']);
@@ -92,7 +92,7 @@ class CategoryAnnonceController extends Controller
                     'image' => $file_name,
                 ]);
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Category/'.$data['category']->name),$imageName);
+                $request->image->move(public_path('Category/'.$data['category']->id),$imageName);
 
             }
 

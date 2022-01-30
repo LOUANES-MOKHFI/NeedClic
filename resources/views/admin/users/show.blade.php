@@ -31,11 +31,11 @@
 				                            		<div class="row">
 				                            			<div class="col-md-6">
 				                            				<label>{{__('admin/annonces.image_profile')}}</label><br>
-				                            				<img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" style="height: 100px;width: 200px;">
+				                            				<img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" style="height: 100px;width: 200px;">
 				                            			</div>
 				                            			<div class="col-md-6">
 				                            				<label>{{__('admin/annonces.image_couverture')}}</label><br>
-				                            				<img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" style="height: 100px;width: 200px;">
+				                            				<img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->img_couverture)}}" style="height: 100px;width: 200px;">
 				                            			</div>
 				                            			<div class="col-md-12">
 				                            				<div class="row">
@@ -198,7 +198,7 @@
                                                 
                                                     <div class="box-content bordered primary margin-bottom-20">
                                                         <div class="profile-avatar">
-                                                            <img src="{{asset('AnnonceDz/public/Profil/'.$user->name.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
+                                                            <img src="{{asset('AnnonceDz/public/Profil/'.$user->id.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
                                                         </div>
                                                         <a href="{{route('users.profil.deleteImage',$attachement->id)}}" title="{{__('admin/annonces.delete')}}" class="text-danger" style="font-size: 20px">
                                                                 <i class="fa fa-trash"></i>

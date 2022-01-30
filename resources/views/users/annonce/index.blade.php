@@ -77,7 +77,7 @@
 			                    <div class="boxes first" data-effect="slide-bottom">
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
 			                        	<a href="{{route('annonces.show',$annonce->uuid)}}">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
 			                        	</a>
 			                           
 
@@ -102,7 +102,7 @@
                                    		@endif
 			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
 			                            <!-- <small class="small_title">{{$annonce->user->wilaya->name}}</small> -->
-			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$annonce->user->name.'/'.$annonce->user->image)}}" style="width: 35px;height: 35px" alt="{{$annonce->user->name}}"></a>
+			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$annonce->user->id.'/'.$annonce->user->image)}}" style="width: 35px;height: 35px" alt="{{$annonce->user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->
 			                </div>

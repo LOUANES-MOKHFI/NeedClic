@@ -42,11 +42,11 @@
 			                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
 			                    <div class="boxes first" data-effect="slide-bottom">
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}">
 			                            <div class="ImageOverlayH"></div>
 			                            <div class="Buttons StyleSc">
 			                                <span class="WhiteSquare">
-			                                    <a class="fancybox" href="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}"><i class="fa fa-search"></i></a>
+			                                    <a class="fancybox" href="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}"><i class="fa fa-search"></i></a>
 			                                </span>
 			                                <span class="WhiteSquare">
 			                                    <a href="{{route('boutique',$user->uuid)}}"><i class="fa fa-link"></i></a>
@@ -58,7 +58,7 @@
 			                            <small class="small_title">
 			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}" data-uuid="{{$user->uuid}}" data-id="{{$user->id}}"></div>
 			                            </small>
-			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img style="width: 35px;height: 35px" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}"></a>
+			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img style="width: 35px;height: 35px" src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->
 			                </div>

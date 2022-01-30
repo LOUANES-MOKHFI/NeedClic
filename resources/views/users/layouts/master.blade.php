@@ -60,16 +60,18 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
             text-transform: uppercase;
             padding-bottom: 10px;
         }
-        .main_menu {
-    
-    padding-bottom: 0px;
-    background-color: #FFF;
-}
-    @media(max-width: 767px){
-        .parallax{
-            background-image: url('/users/img/menu1.png');
+        @media(max-width: 767px){
+            .main_menu {
+                padding-bottom: 100px;
+                background-color: #FFF;
+            }
         }
-    }
+    
+        .parallax{
+            background-image: url('/users/img/menu2.png');
+
+        }
+   
 
 
     </style>

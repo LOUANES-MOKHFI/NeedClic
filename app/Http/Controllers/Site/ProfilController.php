@@ -78,7 +78,7 @@ class ProfilController extends Controller
                 $data['member']->save();
 
                 $imageName = $image->getClientOriginalName();
-                $image->move(public_path('User/'.$data['member']->name),$imageName);
+                $image->move(public_path('User/'.$data['member']->id),$imageName);
 
             }
            if($request->hasFile('img_couverture')){
@@ -89,7 +89,7 @@ class ProfilController extends Controller
                 $data['member']->save();
 
                 $imageNameCouv = $image_couverture->getClientOriginalName();
-                $image_couverture->move(public_path('User/'.$data['member']->name),$imageNameCouv);
+                $image_couverture->move(public_path('User/'.$data['member']->id),$imageNameCouv);
 
             }
            
@@ -138,7 +138,7 @@ class ProfilController extends Controller
 
                     ///Move Attachements
                     $imageUserName = $userAttachement->getClientOriginalName();
-                    $userAttachement->move(public_path('Profil/'.$user->name),$imageUserName);
+                    $userAttachement->move(public_path('Profil/'.$user->id),$imageUserName);
                 }
             }
 
@@ -175,7 +175,7 @@ class ProfilController extends Controller
             return redirect()->back()->with(['error'=>'cette utilisateur n\'existe pas']);
         }
         $data['attachement']->delete();
-        Storage::disk('profile')->delete($user->name.'/'.$data['attachement']->file_name);
+        Storage::disk('profile')->delete($user->id.'/'.$data['attachement']->file_name);
 
         return redirect()->back()->with(['success' => "L'image a étè supprimée avec success"]);
     }

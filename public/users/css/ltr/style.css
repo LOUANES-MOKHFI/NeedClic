@@ -961,7 +961,7 @@ section{
 }
     .profile-menu-settings {
         position: absolute;
-        right: 270px;
+        right: 250px;
         top: 80px;
         z-index: 7;
     }

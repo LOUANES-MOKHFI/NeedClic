@@ -13,9 +13,9 @@
                     <div class="dropdown profile-menu-settings" style="">
 
                         <button class="btn-dropdown dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true">
-                            <img src="/users/img/home/login-ic.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="35" height="35" style="color: DodgerBlue" >
+                            <img src="/users/img/home/login-ic.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="35" height="35" style="color: black;" >
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" style="background-color: DodgerBlue;">      
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" style="background-color: black;">      
                             @guest                            
                                 <li class="">
                                     <a href="{{ route('login') }}" class="nav-link">

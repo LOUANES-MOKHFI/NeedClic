@@ -59,7 +59,7 @@ class AnnonceController extends Controller
 
                     ///Move Attachements
                     $imageName = $request->attachement->getClientOriginalName();
-                    $request->attachement->move(public_path('Annonces/'.$annonce->titre),$imageName);
+                    $request->attachement->move(public_path('Annonces/'.$annonce->id),$imageName);
                 }
             }
             return redirect()->route('admin.annonces')->with(['success' => "L'annonce a étè ajoutée avec success"]);

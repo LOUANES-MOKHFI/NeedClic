@@ -43,7 +43,7 @@
                                 @foreach($publicites as $key=>$publicite)
                                     <tr>
                                         <td>{{$key+1}}</td>
-                                        <td><img style="height: 80px;width:200px" src="{{asset('AnnonceDz/public/Publicite/'.$publicite->title.'/'.$publicite ->image)}}"></td>
+                                        <td><img style="height: 80px;width:200px" src="{{asset('AnnonceDz/public/Publicite/'.$publicite->id.'/'.$publicite ->image)}}"></td>
                                         <td>{{$publicite ->title}}</td>
                                         <td>{{$publicite ->description ? $publicite ->description : '/'}}</td>
                                         <td> @if($publicite->in_home == 1) Haut d'accueill

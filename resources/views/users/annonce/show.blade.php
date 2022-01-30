@@ -32,7 +32,7 @@
                             <ul class="slides">
                             	
                             	@foreach($attachements as $key=>$image)
-                                <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$image->file_name)}}" alt="{{$annonce->titre}}"></li>
+                                <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$image->file_name)}}" alt="{{$annonce->titre}}"></li>
                                 @endforeach
                                
                             </ul>
@@ -41,7 +41,7 @@
                             <ul class="slides">
                             	@isset($attachements)
                             	@foreach($attachements as $key=>$image)
-                                <li><img class="img-thumbnail" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$image->file_name)}}" alt="{{$annonce->titre}}"></li>
+                                <li><img class="img-thumbnail" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$image->file_name)}}" alt="{{$annonce->titre}}"></li>
 
                                 @endforeach
                                 @endisset

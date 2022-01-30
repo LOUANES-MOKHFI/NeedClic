@@ -38,11 +38,11 @@
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
 			                        	@if($type == 'Particulier' || $type == 'Artisanat')
 			                        	<a href="{{route('annonces.category',[$category->slug,$type])}}">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Category/'.$category->name.'/'.$category->image)}}" alt="{{$category->name}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Category/'.$category->id.'/'.$category->image)}}" alt="{{$category->name}}">
 			                            </a>
 			                            @else
 			                            <a href="{{route('comptes.category',[$category->slug,$type])}}">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Category/'.$category->name.'/'.$category->image)}}" alt="{{$category->name}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Category/'.$category->id.'/'.$category->image)}}" alt="{{$category->name}}">
 			                            </a>
 			                            @endif
 			                            

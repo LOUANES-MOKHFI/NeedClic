@@ -1,4 +1,4 @@
-
+@if($pubs->count() >0)
 <section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
             <div class=" dm-shadow" style="padding-top: 5px; padding-bottom: 5px;">
@@ -12,7 +12,7 @@
                                         @isset($pubs)
                                         @foreach($pubs as $key => $pub)
                                         <li>
-                                            <img style="height: 160px" src="{{asset('AnnonceDz/public/Publicite/'.$pub->title.'/'.$pub->image)}}" alt="">
+                                            <img style="height: 160px" src="{{asset('AnnonceDz/public/Publicite/'.$pub->id.'/'.$pub->image)}}" alt="">
                                         </li>
                                         @endforeach
                                         @endif
@@ -26,3 +26,4 @@
             </div>
         </div>
     </section><!-- end mapandslider -->
+@endif

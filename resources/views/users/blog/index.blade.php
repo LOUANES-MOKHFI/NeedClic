@@ -3,7 +3,18 @@
    {{__('users/blog.all_blogs')}}
 @endsection
 @section('style')
-
+<style type="text/css">
+    @media(max-width: 767px){
+        .immg{
+            height: 160px;
+        }
+    }
+    @media(min-width: 767px){
+        .immg{
+            height: 250px;
+        }
+    }
+</style>
 @endsection
 @section('content')
     @include('users.includes.filter.filter_blog')
@@ -46,15 +57,10 @@
 	                        <article class="blog-wrap">
 	                            <div class="ImageWrapper blog-media text-center">
                                     @isset($blog->attachements)
-	                                <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}"  alt="" style="height: 250px">
+	                                <a href="{{route('blogs.show',$blog->uuid)}}">
+                                        <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Blog/'.$blog->id.'/'.$blog->attachements[0]->file_name)}}"  alt="">
+                                    </a>
                                     @endisset
-	                                <div class="ImageOverlayH"></div>
-	                                <div class="Buttons StyleMg">
-                                        @isset($blog->attachements)
-	                                    <span class="WhiteSquare"><a class="fancybox" href="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$blog->attachements[0]->file_name)}}"><i class="fa fa-search"></i></a></span>
-                                         @endisset
-	                                    <span class="WhiteSquare"><a href="{{route('blogs.show',$blog->uuid)}}"><i class="fa fa-link"></i></a></span>
-	                                </div>
 	                            </div><!-- end blog media -->
 	                            <div class="post-date">
 	                                <span class="day">{{date_format($blog->created_at,'d')}}</span>

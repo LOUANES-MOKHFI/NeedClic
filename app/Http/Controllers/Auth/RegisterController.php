@@ -198,7 +198,7 @@ class RegisterController extends Controller
                 $user->save();
 
                 $imageNameProfil = $image_profil->getClientOriginalName();
-                $image_profil->move(public_path('User/'.$user->name),$imageNameProfil);
+                $image_profil->move(public_path('User/'.$user->id),$imageNameProfil);
 
             }
             if($data['img_couverture']){
@@ -209,7 +209,7 @@ class RegisterController extends Controller
                 $user->save();
 
                 $imageNameCouv = $image_couverture->getClientOriginalName();
-                $image_couverture->move(public_path('User/'.$user->name),$imageNameCouv);
+                $image_couverture->move(public_path('User/'.$user->id),$imageNameCouv);
 
             }
         if($data['type_compte'] == 2) {

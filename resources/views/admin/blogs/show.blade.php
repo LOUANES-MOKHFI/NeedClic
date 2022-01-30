@@ -15,7 +15,7 @@
 									
 										<div class="box-content bordered primary margin-bottom-20">
 						                    <div class="profile-avatar">
-						                        <img src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
+						                        <img src="{{asset('AnnonceDz/public/Blog/'.$blog->id.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
 						                    </div>
 						                    <a href="{{route('admin.blogs.deleteImage',$attachement->id)}}" title="supprimer" class="text-danger" style="font-size: 20px">
 						                        	<i class="fa fa-trash"></i>

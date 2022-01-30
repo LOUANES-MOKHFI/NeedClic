@@ -38,7 +38,7 @@ class CategoryBlogController extends Controller
                 'image'=> $file_name,
             	]);
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('BlogCategories/'.$category->name),$imageName);
+                $request->image->move(public_path('BlogCategories/'.$category->id),$imageName);
             }
         	return redirect()->route('admin.settings.categories_blogs')->with(['success' => 'La categorie est ajoutée avec success']);
     	} catch (Exception $e) {
@@ -84,7 +84,7 @@ class CategoryBlogController extends Controller
                     'image' => $file_name,
                 ]);
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('BlogCategories/'.$data['category']->name),$imageName);
+                $request->image->move(public_path('BlogCategories/'.$data['category']->id),$imageName);
             }
 
 

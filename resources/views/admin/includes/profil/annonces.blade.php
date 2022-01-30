@@ -16,7 +16,7 @@
 						<a href="{{route('users.annonces.show',$annonce -> uuid)}}" class="prj-item">
 							<div class="top-project-section">
 								<div class="project-icon">
-									<img src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="NeedClic">
+									<img src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="NeedClic">
 								</div>
 								<h3>{{$annonce ->titre}}</h3>
 								

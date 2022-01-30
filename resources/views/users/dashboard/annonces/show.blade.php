@@ -23,7 +23,7 @@
 									
 										<div class="box-content bordered primary margin-bottom-20">
 						                    <div class="profile-avatar">
-						                        <img src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
+						                        <img src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
 						                    </div>
 						                    <a href="{{route('users.annonces.deleteImage',$attachement->id)}}" title="{{__('admin/annonces.delete')}}" class="text-danger" style="font-size: 20px">
 						                        	<i class="fa fa-trash"></i>

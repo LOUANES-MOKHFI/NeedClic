@@ -25,7 +25,7 @@
                                     <ul class="slides">
                                         @isset($blog->attachements)
                                         @foreach($blog->attachements as $key=>$image)
-                                        <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$image->file_name)}}" alt="{{$blog->titre}}"></li>
+                                        <li><img class="img-thumbnail" style="height: 400px" src="{{asset('AnnonceDz/public/Blog/'.$blog->id.'/'.$image->file_name)}}" alt="{{$blog->titre}}"></li>
                                         @endforeach
                                         @endisset
                                     </ul>
@@ -34,7 +34,7 @@
                                     <ul class="slides">
                                         @isset($blog->attachements)
                                         @foreach($blog->attachements as $key=>$image)
-                                        <li><img class="img-thumbnail" src="{{asset('AnnonceDz/public/Blog/'.$blog->titre.'/'.$image->file_name)}}" alt="{{$blog->titre}}"></li>
+                                        <li><img class="img-thumbnail" src="{{asset('AnnonceDz/public/Blog/'.$blog->id.'/'.$image->file_name)}}" alt="{{$blog->titre}}"></li>
 
                                         @endforeach
                                         @endisset

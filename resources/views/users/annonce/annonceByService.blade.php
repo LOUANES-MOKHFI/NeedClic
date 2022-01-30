@@ -42,11 +42,11 @@
 			                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 			                    <div class="boxes first" data-effect="slide-bottom">
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
 			                            <div class="ImageOverlayH"></div>
 			                            <div class="Buttons StyleSc">
 			                                <span class="WhiteSquare">
-			                                    <a class="fancybox" href="{{asset('AnnonceDz/public/Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}"><i class="fa fa-search"></i></a>
+			                                    <a class="fancybox" href="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}"><i class="fa fa-search"></i></a>
 			                                </span>
 			                                <span class="WhiteSquare">
 			                                    <a href="{{route('annonces.show',$annonce->uuid)}}"><i class="fa fa-link"></i></a>
@@ -168,7 +168,7 @@
 			                            <div class="item @if($key==0) active @endif">
 			                                <div class="singleTeam text-center">
 			                                    <div class="teamImg">
-			                                        <img style="height: 250px" src="{{asset('Annonces/'.$annonce->titre.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+			                                        <img style="height: 250px" src="{{asset('Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
 			                                    </div>
 			                                    <div class="teamDet">
 			                                        <h3>{{$annonce->titre}}</h3>

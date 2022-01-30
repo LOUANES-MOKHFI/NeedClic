@@ -42,7 +42,7 @@
 			                    <div class="boxes first" data-effect="slide-bottom">
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
 			                        	<a href="{{route('boutique',$user->uuid)}}">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}">
+			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}">
 			                        	</a>
 			                        </div>
 			                        <h2 class="title">
@@ -50,7 +50,7 @@
 			                            <small class="small_title">
 			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}" data-uuid="{{$user->uuid}}" data-id="{{$user->id}}"></div>
 			                            </small>
-			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img style="width: 35px;height: 35px" src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" alt="{{$user->name}}"></a>
+			                            <a class="box-agent-icon" href="{{route('boutique',$user->uuid)}}"><img style="width: 35px;height: 35px" src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->img_couverture)}}" alt="{{$user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->
 			                </div>

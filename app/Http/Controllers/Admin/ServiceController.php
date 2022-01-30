@@ -43,7 +43,7 @@ class ServiceController extends Controller
                 
                 ///Move Image
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Service/'.$service->name),$imageName);
+                $request->image->move(public_path('Service/'.$service->id),$imageName);
             }
         	return redirect()->route('admin.settings.services')->with(['success' => "L'service est ajoutée avec success"]);
     	} catch (Exception $e) {
@@ -91,7 +91,7 @@ class ServiceController extends Controller
                 
                 ///Move Image
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Service/'.$data['service']->name),$imageName);
+                $request->image->move(public_path('Service/'.$data['service']->id),$imageName);
             }
 
         return redirect()->route('admin.settings.services')->with(['success' => "L'service est modifiée avec success"]);

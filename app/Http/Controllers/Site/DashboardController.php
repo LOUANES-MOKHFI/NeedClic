@@ -88,7 +88,7 @@ class DashboardController extends Controller
 
                     ///Move Attachements
                     $imageName = $attachement->getClientOriginalName();
-                    $attachement->move(public_path('Annonces/'.$annonce->titre),$imageName);
+                    $attachement->move(public_path('Annonces/'.$annonce->id),$imageName);
                 }
             }
             return redirect()->route('users.dashboard')->with(['success' => "L'annonce a étè ajoutée avec success"]);
@@ -181,7 +181,7 @@ class DashboardController extends Controller
             return redirect()->back()->with(['error'=>'cette annonce n\'existe pas']);
         }
         $data['attachement']->delete();
-        Storage::disk('annonces')->delete($annonce->titre.'/'.$data['attachement']->file_name);
+        Storage::disk('annonces')->delete($annonce->id.'/'.$data['attachement']->file_name);
 
         return redirect()->back()->with(['success' => "L'image a étè supprimée avec success"]);
     }
@@ -209,7 +209,7 @@ class DashboardController extends Controller
 
                     ///Move Attachements
                     $imageName = $attachement->getClientOriginalName();
-                    $attachement->move(public_path('Annonces/'.$annonce->titre),$imageName);
+                    $attachement->move(public_path('Annonces/'.$annonce->id),$imageName);
                 }
         return redirect()->back()->with(['success' => "L'image a étè ajouter avec success"]);
 

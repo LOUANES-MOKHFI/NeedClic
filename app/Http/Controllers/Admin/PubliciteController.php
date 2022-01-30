@@ -43,7 +43,7 @@ class PubliciteController extends Controller
                 
                 ///Move Image
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Publicite/'.$publicite->title),$imageName);
+                $request->image->move(public_path('Publicite/'.$publicite->id),$imageName);
             }
             return redirect()->route('admin.publicite')->with(['success' => "La publicite est ajoutée avec success"]);
         } catch (Exception $e) {
@@ -89,7 +89,7 @@ class PubliciteController extends Controller
                 
                 ///Move Image
                 $imageName = $request->image->getClientOriginalName();
-                $request->image->move(public_path('Publicite/'.$data['publicite']->title),$imageName);
+                $request->image->move(public_path('Publicite/'.$data['publicite']->id),$imageName);
             }
 
         return redirect()->route('admin.publicite')->with(['success' => "La publicite est modifiée avec success"]);

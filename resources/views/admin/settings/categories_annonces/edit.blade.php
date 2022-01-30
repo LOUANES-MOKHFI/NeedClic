@@ -73,7 +73,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                          <div class="form-group">
-                                                            <img style="height: 150px;width: 150px" src="{{asset('AnnonceDz/public/Category/'.$category->name.'/'.$category->image)}}">
+                                                            <img style="height: 150px;width: 150px" src="{{asset('AnnonceDz/public/Category/'.$category->id.'/'.$category->image)}}">
                                                          </div>
                                                     </div>
                                                     <div class="col-md-6">

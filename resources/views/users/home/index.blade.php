@@ -162,7 +162,7 @@
                                 @foreach($services as $key=>$service)
                                  <div>
                                     <a href="{{route('annonces.service',$service->slug)}}">
-                                         <img src="{{asset('AnnonceDz/public/Service/'.$service->name.'/'.$service->image)}}" style="height: 200px;">
+                                         <img src="{{asset('AnnonceDz/public/Service/'.$service->id.'/'.$service->image)}}" style="height: 200px;">
                                     </a>
 
                                     <div class=" text-center">
@@ -265,7 +265,7 @@
                                 @foreach($categoriesBlogs as $key=>$category)
                                  <div>
                                     <a href="{{route('blogs.category',$category->slug)}}">
-                                         <img src="{{asset('AnnonceDz/public/BlogCategories/'.$category->name.'/'.$category->image)}}" style="height: 220px;">
+                                         <img src="{{asset('AnnonceDz/public/BlogCategories/'.$category->id.'/'.$category->image)}}" style="height: 220px;">
                                     </a>
                                     <div class=" text-center">
                                         <h2 class="title text-center" style="color: black;font-size: 15px;">
@@ -290,6 +290,7 @@
                     <div class="row">
                         
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 15px;">
+                            @if($pubsbas->count()>0)
                             <div id="" class="clearfix">
                                 <div class="flexslider">
                                     <ul class="slides">
@@ -303,14 +304,16 @@
                                                     
                                                 </div>
                                             </div> -->
-                                            <a href="#"><img style="height: 285px" src="{{asset('AnnonceDz/public/Publicite/'.$pub->title.'/'.$pub->image)}}" alt=""></a>
+                                            <a href="#"><img style="height: 285px" src="{{asset('AnnonceDz/public/Publicite/'.$pub->id.'/'.$pub->image)}}" alt=""></a>
                                         </li>
                                         @endforeach
                                         @endisset
                                     </ul><!-- end slides -->
                                 </div><!-- end flexslider -->
                             </div><!-- end property-slider -->
+                            @endif
                         </div><!-- end col-lg-8 -->
+                        
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div id="" class="clearfix">
                             <div class="flexslider">
@@ -322,7 +325,7 @@
                                                     <div class="slider-pro-desc">
                                                         <h1><a href="{{route('boutique',$user->uuid)}}">{{$user->name}}</a></h1>
 
-                                                        <a  class="slide-agent" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->image)}}" alt="{{$user->name}}"></a>
+                                                        <a  class="slide-agent" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}"></a>
                                                         @if($user->type_compte == 0)
                                                             <span class="text-info type">
                                                                 @isset($user->category)
@@ -354,7 +357,7 @@
                                                         
                                                     </div>
                                                 </div>
-                                                <a href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" alt="" style="height: 280px"></a>
+                                                <a href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->img_couverture)}}" alt="" style="height: 280px"></a>
                                             </li>
                                         @endforeach
                                     @endisset
@@ -367,7 +370,7 @@
                 </div><!-- end dm_container -->
             </div>
         </div>
-    </section><!-- end mapandslider -->
+</section><!-- end mapandslider -->
 <!-- <section id="two-parallax" class="parallax"  data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <div class=" dm-shadow">
         <div class="container padding-btm40">
