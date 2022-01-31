@@ -49,6 +49,10 @@
 	        <i class="fa fa-bullhorn notice-alarm" ></i>
 	        <span class="num notif_user" data-count="{{Count(unActiveAnnonce())}}">{{Count(unActiveAnnonce())}}</span>
     	</a>
+    	<a href="#" class="ico-item notifications js__toggle_open ico-item-notif" data-target="#unActiveAlbum" >
+	        <i class="fa fa-file-text notice-alarm" ></i>
+	        <span class="num notif_user" data-count="{{Count(unActiveAlbum())}}">{{Count(unActiveAlbum())}}</span>
+    	</a>
        
         <a href="{{route('admin.logout')}}" class="ico-item mdi mdi-logout"></a>
 	</div>
@@ -155,6 +159,34 @@
 					<span class="desc">{{$annonce->category->name}}</span>
 					
 					<span class="time">{{date_format($annonce->created_at,'Y-M-d')}}<br>{{date_format($annonce->created_at,'h:m')}} </span>
+				</a>
+			</li>
+			@endforeach
+			@endif
+			
+			
+		</ul>
+		<!-- /.notice-list -->
+		<a href="{{route('admin.annonces')}}" class="notice-read-more">{{__('admin/header.see_all_annonce')}} <i class="fa fa-angle-down"></i></a>
+	</div>
+	<!-- /.content -->
+</div>
+
+<div id="unActiveAlbum" class="notice-popup" >
+	<h2 class="popup-title">Nouveaux albums
+		<a href="#" class="pull-right text-danger">Nouveaux albums
+	</a></h2>
+	<!-- /.popup-title -->
+	<div class="content">
+		<ul class="notice-list">
+			@if(count(unActiveAlbum())>0)
+			@foreach(unActiveAlbum() as $key=>$album)
+			<li>
+				<a href="{{route('admin.albums.show',$album -> uuid)}}">
+					<span class="avatar"><img src="/admin/assets/images/avatar-sm-1.jpg" alt=""></span>
+					<span class="name">{{$album->title}} - {{$album->user ? $album ->user->name : 'utilisateur supprimée'}}</span>
+					
+					<span class="time">{{date_format($album->created_at,'Y-M-d')}}<br>{{date_format($album->created_at,'h:m')}} </span>
 				</a>
 			</li>
 			@endforeach

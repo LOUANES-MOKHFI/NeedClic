@@ -91,5 +91,7 @@ function unActiveUser(){
   function unActiveAnnonce(){
     return \App\Models\Annonces::where('status' , 0)->get();
   }
-
+function unActiveAlbum(){
+    return \App\Models\Album::where('is_active' , 0)->get();
+  }
 ?>

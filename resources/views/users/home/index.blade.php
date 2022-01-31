@@ -133,7 +133,7 @@
                                 
                             </div>
                             <h2 class="title text-center" style="color: black;font-size: 15px;">
-                                <a style="color: black" href="{{route('categories.proffessionnelles','Artisant')}}"> {{$artisant->name}}</a>
+                                <a style="color: black" href="{{route('categories.proffessionnelles','Artisan')}}"> {{$artisant->name}}</a>
                             </h2>
                         </div><!-- end boxes -->
                         

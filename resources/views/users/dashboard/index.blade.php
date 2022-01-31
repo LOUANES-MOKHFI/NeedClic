@@ -32,7 +32,7 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="col-md-12">
                                             <label>{{__('admin/annonces.image_couverture')}}</label><br>
-                                            <img src="{{asset('AnnonceDz/public/User/'.$user->name.'/'.$user->img_couverture)}}" style="height: 200px;width: 400px;">
+                                            <img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->img_couverture)}}" style="height: 200px;width: 400px;">
                                             <br>
                                         </div>
                                     </div>

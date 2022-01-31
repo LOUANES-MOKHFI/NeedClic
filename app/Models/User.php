@@ -54,7 +54,7 @@ class User extends Authenticatable
         return $this->hasMany(Annonces::class)->where('status',1);
     }
     public function albums(){
-        return $this->hasMany(Album::class)->where('status',1);
+        return $this->hasMany(Album::class)->where('status',1)->where('is_active',1);
     }
     public function user_attachements(){
         return $this->hasMany(UserAttachements::class);

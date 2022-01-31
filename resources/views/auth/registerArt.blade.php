@@ -7,7 +7,7 @@
 
 @endsection
 @section('content')
-    <section id="one-parallax" class="post-wrapper-top dm-shadow clearfix parallax" style="background-image: url('/users/img/breadcrumb.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+    <section id="one-parallax" class="post-wrapper-top dm-shadow clearfix parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="overlay1 dm-shadow">
             <div class="container">
                 <div class="post-wrapper-top-shadow">
@@ -37,7 +37,7 @@
                                 <form  method="POST" action="{{ route('register') }}" enctype='multipart/form-data'>
                                     @csrf
                                     <input type="hidden" name="type_compte" value="2">
-                                    <input type="hidden" name="type_compte_proff" value="Artisant">
+                                    <input type="hidden" name="type_compte_proff" value="Artisan">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -94,8 +94,8 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                                                    <select name="wilaya_id" class="form-control form-control-lg" id="wilaya_id">
-                                                    <option value="" disabled="">-- {{__('users/auth.wilaya')}} --</option>
+                                                    <select name="wilaya_id" class="form-control form-control-lg" required id="wilaya_id">
+                                                    <option value="" >-- {{__('users/auth.wilaya')}} --</option>
                                                         @if(count(Wilayas()) > 0)
                                                             @foreach(Wilayas() as $wilaya)
                                                                 <option value="{{$wilaya->id}}">{{$wilaya->name}}</option>

@@ -1,9 +1,12 @@
 <div class="main_menu fixed_menu parallax" id="one-parallax" style="" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="container">
-            <div class="wrapper" >
-                <div class="header-logo">
-                    <a href="{{route('home')}}"><img src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive" style="height: 90px;width: 100px"></a>
-                </div> <!-- End .header-logo -->
+            <div class="wrapper">
+                    <div class="header-logo">
+                        <a href="{{route('home')}}" style="margin-left: 30px;">
+                            <img src="{{asset('Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive" style="height: 90px;width: 100px">
+                        </a>
+                    </div> 
+                <!-- End .header-logo -->
                 <div class="btn-cnt-mn">
                 
                    <!--  <a href="#" class="dropdown-item btn-sumbit-menu" data-toggle="modal"   data-target="#search" data-original-title="Rechercher un annonce" style="background-color: DodgerBlue;">

@@ -156,6 +156,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 
 		});
+		//////annonces
+		Route::group(['prefix' => 'albums','middleware' => 'can:annonces'],function(){
+			Route::get('/','AlbumController@index')->name('admin.albums');
+			Route::get('/show/{uuid}','AlbumController@show')->name('admin.albums.show');
+			Route::get('/create','AlbumController@create')->name('admin.albums.create');
+			Route::post('/store','AlbumController@store')->name('admin.albums.store');
+			Route::get('/edit/{uuid}','AlbumController@edit')->name('admin.albums.edit');
+			Route::post('/update/{uuid}','AlbumController@update')->name('admin.albums.update');
+			Route::get('/delete/{uuid}','AlbumController@destroy')->name('admin.albums.delete');
+			Route::get('/approuver/{uuid}','AlbumController@Approuver')->name('admin.albums.approuver');
+			Route::get('/get-annonce/{type_id}','AlbumController@getAnnonce')->name('admin.albums.getAnnonce');
+
+			///attachements
+			Route::get('/deleteImage/{id}','AlbumController@deleteImage')->name('admin.albums.deleteImage');
+
+
+		});
 
 
 		//////Contact Message

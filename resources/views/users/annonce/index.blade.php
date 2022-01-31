@@ -33,14 +33,14 @@
 
 		@isset($category)
 			@if($category->category_compte == 1)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_particulier" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_particulier" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 3)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisanat" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisanat" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			
 			@elseif($category->category_compte == 2)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 4)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTREZ PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@endif
 			
 		@endisset

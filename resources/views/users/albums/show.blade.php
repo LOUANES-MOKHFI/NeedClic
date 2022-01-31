@@ -6,12 +6,12 @@
 <style type="text/css">
 	@media(max-width: 676px){
 		.imgg{
-			height: 120px;
+			height: 150px;
 		}
 	}
 	@media(min-width: 676px){
 		.imgg{
-			height: 180px;
+			height: 160px;
 		}
 	}
 </style>

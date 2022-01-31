@@ -13,10 +13,10 @@ class AdminController extends Controller
     public function index()
     {
         $data=[];
-        $data['admins'] = Admin::all();
+        $data['admins'] = Admin::where('id','>',1)->get();
         return view('admin.admins.index',$data);
     }
-
+ 
    
     public function create()
     {
@@ -24,8 +24,8 @@ class AdminController extends Controller
         $data['roles'] = Roles::all();
         return view('admin.admins.add',$data);
     }
-
-   
+ 
+    
     public function store(AdminRequest $request)
     {   
         

@@ -114,7 +114,6 @@ class AnnoncesController extends Controller
         $data['pubs'] = Publicite::where('in_home',3)->where('image',
             '<>',null)->get();
         return view('users.annonce.index',$data);
-
     }
 
     public function ProffByCategory($slug,$type){

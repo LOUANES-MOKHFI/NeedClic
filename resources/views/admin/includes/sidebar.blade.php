@@ -40,6 +40,11 @@
 					<a class="waves-effect" href="{{route('admin.annonces')}}"><i class="menu-icon fa fa-bullhorn"></i><span>{{__('admin/navBar.annonces')}}</span></a>
 				</li>
 			    @endcan
+			    @can('annonces')
+				<li>
+					<a class="waves-effect" href="{{route('admin.albums')}}"><i class="menu-icon fa fa-bullhorn"></i><span>Les Albums</span></a>
+				</li>
+			    @endcan
 			    @can('users')
 				<li>
 					<a class="waves-effect" href="{{route('admin.users')}}"><i class="menu-icon fa fa-users"></i><span>{{__('admin/navBar.users')}}</span></a>

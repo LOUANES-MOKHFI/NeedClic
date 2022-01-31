@@ -36,12 +36,23 @@
                     <a href="#" style="color:white">
                         <div class="statistics-box with-icon">
                             <i class="ico small fa fa-users "></i>
-                            <p class="text text-white"  style="font-size:18px">{{__('admin/settings.proffessionnelles')}}</p>
-                            <h2 class="counter">{{$proffs->count()}}</h2>
+                            <p class="text text-white"  style="font-size:18px">Ingénieures</p>
+                            <h2 class="counter">{{$proffsIng->count()}}</h2>
                         </div>
                     </a>
 				</div>
 			</div>
+            <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="box-content bg-violet text-white">
+                    <a href="#" style="color:white">
+                        <div class="statistics-box with-icon">
+                            <i class="ico small fa fa-users "></i>
+                            <p class="text text-white"  style="font-size:18px">Artisans</p>
+                            <h2 class="counter">{{$proffsArt->count()}}</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
 			
 
@@ -50,7 +61,7 @@
                     <a href="#" style="color:white">
                         <div class="statistics-box with-icon">
                             <i class="ico small fa fa-users"></i>
-                            <p class="text text-white"  style="font-size:18px">{{__('admin/settings.artisanats')}}</p>
+                            <p class="text text-white"  style="font-size:18px">Créations artisanales</p>
                             <h2 class="counter">{{$artisanats->count()}}</h2>
                         </div>
                     </a>
@@ -61,7 +72,7 @@
                     <a href="#" style="color:white">
                         <div class="statistics-box with-icon">
                             <i class="ico small fa fa-users"></i>
-                            <p class="text text-white"  style="font-size:18px">{{__('admin/settings.particuliers')}}</p>
+                            <p class="text text-white"  style="font-size:18px"> Marketplace Particulier</p>
                             <h2 class="counter">{{$particuliers->count()}}</h2>
                         </div>
                     </a>

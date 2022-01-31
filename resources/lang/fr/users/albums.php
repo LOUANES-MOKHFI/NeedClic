@@ -14,7 +14,7 @@ return [
    'status'            => "Status",
    'actions'           => "Actions",
    'back'              => "Retour",
-   'add_album'         => "Ajouter une Album",
+   'add_album'         => "Ajouter un Album",
    'added_by'          => "Ajouter par",
    'images'            => "Images",
    'image'             => "Images",
