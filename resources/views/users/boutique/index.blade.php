@@ -8,13 +8,13 @@
         color: red;
     }
     @media(max-width: 767px){
-        .immg{
+        .big-ImageWrapper img{
             height: 160px;
         }
     }
     @media(min-width: 767px){
-        .immg{
-            height: 250px;
+        .big-ImageWrapper img{
+            height: 200px;
         }
     }
 </style>
@@ -158,7 +158,7 @@
                                             <div class="boxes first" data-effect="slide-bottom">
                                                 <div class="ImageWrapper big-ImageWrapper boxes_img">
                                                     <a href="{{route('annonces.show',$annonce->uuid)}}">
-                                                    <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+                                                    <img class="img-responsive immg" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
                                                     </a>
 
                                                     <!-- <div class="box_type">{{$annonce->prix}}</div> -->

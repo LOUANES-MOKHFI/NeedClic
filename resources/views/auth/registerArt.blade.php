@@ -65,8 +65,8 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-copyright"></i></span>
-                                                    <select name="category_id" class="form-control form-control-lg" id="category_id">
-                                                    <option value="" disabled="">-- {{__('users/auth.category')}} --</option>
+                                                    <select name="category_id" class="form-control form-control-lg" required id="category_id">
+                                                    <option value="">-- {{__('users/auth.category')}} --</option>
                                                         @if(count(CategoriesArt()) > 0)
                                                             @foreach(CategoriesArt() as $category)
                                                                 <option value="{{$category->id}}">{{$category->name}}</option>

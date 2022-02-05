@@ -93,8 +93,8 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                                                    <select name="wilaya_id" class="form-control form-control-lg" id="wilaya_id">
-                                                    <option value="" disabled="">-- {{__('users/auth.wilaya')}} --</option>
+                                                    <select name="wilaya_id" class="form-control form-control-lg" required id="wilaya_id">
+                                                    <option value="">-- {{__('users/auth.wilaya')}} --</option>
                                                         @if(count(Wilayas()) > 0)
                                                             @foreach(Wilayas() as $wilaya)
                                                                 <option value="{{$wilaya->id}}">{{$wilaya->name}}</option>

@@ -80,8 +80,8 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-scribd"></i></span>
-                                                    <select name="service_id" class="form-control form-control-lg" id="service_id" >
-                                                    <option value="" disabled="">--  {{__('users/auth.service')}} --</option>
+                                                    <select name="service_id" class="form-control form-control-lg" required id="service_id" >
+                                                    <option value="">--  {{__('users/auth.service')}} --</option>
                                                         @if(count(Services()) > 0)
                                                             @foreach(Services() as $service)
                                                                 <option value="{{$service->id}}">{{$service->name}}</option>

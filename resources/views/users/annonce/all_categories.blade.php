@@ -25,17 +25,14 @@
         <li>@isset($type) {{$type}} @endisset</li>
     </ul>
 </div>
-<section class="generalwrapper dm-shadow clearfix parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');"
+<section style="background-image: url('/users/img/01_parallax.jpg');"
     data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 	<div class="container">
 	    <div class="row">
-	        <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
-	            <div class="clearfix">
 	            	@isset($categories)
 	            		@foreach($categories as $key=> $category)
 			                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-			                    <div class=" first" data-effect="slide-bottom">
-			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
+			                        
 			                        	@if($type == 'Particulier' || $type == 'Artisanat')
 			                        	<a href="{{route('annonces.category',[$category->slug,$type])}}">
 			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Category/'.$category->id.'/'.$category->image)}}" alt="{{$category->name}}">
@@ -46,7 +43,7 @@
 			                            </a>
 			                            @endif
 			                            
-			                        </div>
+			                        
 			                        <h2 class="title text-center">
 			                        	@if($type == 'Particulier' || $type == 'Artisanat')
 			                        		<a style="color: black;font-weight: bold;font-size: 15px" href="{{route('annonces.category',[$category->slug,$type])}}"> {{$category->name}}</a>
@@ -54,24 +51,11 @@
 			                            <a style="color: black;font-weight: bold;font-size: 15px" href="{{route('comptes.category',[$category->slug,$type])}}"> {{$category->name}}</a>
 			                           @endif
 			                        </h2>
-			                    </div><!-- end boxes -->
 			                </div>
 			            @endforeach
 			        @endisset
 
-	            </div>
-
-	            <div class="pagination_wrapper clearfix">
-	                <!-- Pagination Normal -->
-	                <ul class="pagination">
-	                    
-	                </ul>
-	            </div>
-
-	        </div><!-- end content -->
-
 	        
-	    </div><!-- end row -->
             </div><!-- end container -->
         </section>
 

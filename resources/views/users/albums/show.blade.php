@@ -6,12 +6,12 @@
 <style type="text/css">
 	@media(max-width: 676px){
 		.imgg{
-			height: 150px;
+			height: 250px;
 		}
 	}
 	@media(min-width: 676px){
 		.imgg{
-			height: 160px;
+			height: 600px;
 		}
 	}
 </style>
@@ -43,7 +43,7 @@
                             <ul class="slides">
                                 
                                 @foreach($album->attachements as $key=>$attachement)
-                                <li><img class="img-thumbnail" style="height: 470px" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
+                                <li><img class="img-thumbnail imgg" src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="{{$album->titre}}"></li>
                                 @endforeach
                                
                             </ul>
