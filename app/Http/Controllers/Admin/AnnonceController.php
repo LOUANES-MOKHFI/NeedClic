@@ -146,7 +146,10 @@ class AnnonceController extends Controller
         $data['annonce']->status = $status;
         $name = $data['annonce']->user->name;
         $email = $data['annonce']->user->email;
-        $this->sendMail($name,$email);
+        if($status == 1){
+            $this->sendMail($name,$email);
+        }
+        
         $data['annonce']->save();
         
         return redirect()->back()->with(['success' => "Le status de l'annonce a étè changer avec success"]);
@@ -166,7 +169,7 @@ class AnnonceController extends Controller
     public function sendMail($to_name,$to_email){
 
         $data = array('name'=>$to_name, "header" => "
-             Votre Annonce dans la plateform NeedClic est accepté,",
+             Votre annonce a bien été confirmée, vous pouvez la consulter sur le lien ",
             "lien" => "www.needclic.com/fr",
             );
             Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {

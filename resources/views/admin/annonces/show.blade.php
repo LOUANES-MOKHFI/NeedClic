@@ -44,8 +44,22 @@
 				                                   
 				                                    <div class="col-md-6">
 				                                        <div class="row">
-				                                            <div class="col-xs-5"><label>{{__('admin/annonces.category')}}:</label></div>
-				                                            <div class="col-xs-7">{{$annonce->category->name}}</div>
+                                        	@if($annonce->user->type_compte == 3)
+                                        	<div class="col-xs-5">
+                            				<label>Service:</label>
+                            				</div>
+                                 			<div class="col-xs-7"> {{$annonce->service ? $annonce ->service->name : '/'}}
+                                 			</div>
+
+                                            @else
+                                            	<div class="col-xs-5">
+                                            		<label>{{__('admin/annonces.category')}}:</label>
+                                            	</div>
+				                                 <div class="col-xs-7"> {{$annonce->category ? $annonce ->category->name : '/'}}
+				                                 </div>
+                                               
+                                            @endif
+				                                            
 				                                        </div>
 				                                    </div>
 				                                    <div class="col-md-6">
@@ -75,6 +89,11 @@
 				                                            </div>
 				                                        </div>
 				                                    </div>
+				                                    <div class="col-md-12">
+				                                    	<h5>Information de compte:</h5><br>
+				                                    	<p style="font-size:17px">{{$annonce->user ? $annonce ->user->name : 'utilisateur supprimée'}}</p><br>
+				                                    	<p style="font-size:17px">{{$annonce->user ? $annonce ->user->email : 'utilisateur supprimée'}}</p><br>
+				                                    </div>
 				                                    <div class="col-md-6">
 				                                    	@if($annonce ->status == 0)
 			                                                <a href="{{route('admin.annonces.approuver',$annonce -> uuid)}}" class="btn btn-bordered btn-success waves-effect waves-light"
@@ -87,6 +106,11 @@
 			                                                {{__('admin/annonces.desactiver')}}
 			                                                </a>
 			                                            @endif
+				                                    </div>
+				                                    <div class="col-md-6">
+				                                    	<a href="{{route('admin.annonces.delete',$annonce -> uuid)}}" class="btn btn-bordered btn-danger waves-effect waves-light">
+			                                            	{{__('admin/annonces.delete')}}
+			                                            </a>
 				                                    </div>
 				                                </div>
 				                            </div>

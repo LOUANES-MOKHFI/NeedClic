@@ -7,6 +7,15 @@
 	.show-menu-arrow option{
 		color: black;
 	}
+	 @media(max-width: 767px){
+        .big-ImageWrapper img{
+            height: 150px;
+        }
+    }
+    @media(min-width: 767px){
+        .big-ImageWrapper img{
+            
+        }
 </style>
 @endsection
 @section('content')

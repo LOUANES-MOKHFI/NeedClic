@@ -71,8 +71,22 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
             background-image: url('/users/img/menu2.png');
 
         }
-   
-
+        a{
+            color: #A844C1;
+        }
+        .box-agent-icon{
+            border-color: #A844C1;;
+        }
+        .btn-primary{
+            background-color: #A844C1;
+        }
+        .main_menu .navbar-default .navbar-toggle .icon-bar{
+            background-color: black;
+            height: 4px;
+        }
+        .flex-direction-nav>li>a{
+            background-color: #A844C1;
+        }
 
     </style>
     @yield('style')

@@ -7,6 +7,15 @@
 	.show-menu-arrow option{
 		color: black;
 	}
+	 @media(max-width: 767px){
+        .big-ImageWrapper img{
+            height: 150px;
+        }
+    }
+    @media(min-width: 767px){
+        .big-ImageWrapper img{
+            
+        }
 </style>
 @endsection
 @section('content')
@@ -23,9 +32,9 @@
 	</div>
 	<div style="float: right;">
 		    @if($category->category_compte == 2)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 4)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@endif
 		
 	</div>
@@ -54,7 +63,7 @@
 			                            </a>
 			                        </div>
 			                        <h2 class="title">
-			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
+			                            <a style="font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
 			                            <small class="small_title">
 			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}"  data-id="{{$user->id}}"></div>
 			                            </small>

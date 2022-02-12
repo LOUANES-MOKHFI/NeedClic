@@ -19,14 +19,17 @@
     font-family:sans-serif;
     text-align:center;
 }
+.fixed-navbar .ico-item{
+	display: inline-block;
+}
 
 </style>
 <div class="fixed-navbar">
 	<div class="pull-left">
 		<button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
 		<h1 class="page-title">{{__('admin/header.home')}}</h1>
-		<a href="#" class="ico-item mdi" onclick="dark()" ><i class="fa fa-moon-o" aria-hidden="true"></i></a>
-		<a href="#" class="ico-item mdi" onclick="light()"><i class="fa fa-sun-o" aria-hidden="true"></i></a>
+		<!-- <a href="#" class="ico-item mdi" onclick="dark()" ><i class="fa fa-moon-o" aria-hidden="true"></i></a>
+		<a href="#" class="ico-item mdi" onclick="light()"><i class="fa fa-sun-o" aria-hidden="true"></i></a> -->
 		<!-- /.page-title -->
 	</div>
 	<!-- /.pull-left -->
@@ -195,7 +198,7 @@
 			
 		</ul>
 		<!-- /.notice-list -->
-		<a href="{{route('admin.annonces')}}" class="notice-read-more">{{__('admin/header.see_all_annonce')}} <i class="fa fa-angle-down"></i></a>
+		<a href="{{route('admin.albums')}}" class="notice-read-more">Tout les albums <i class="fa fa-angle-down"></i></a>
 	</div>
 	<!-- /.content -->
 </div>

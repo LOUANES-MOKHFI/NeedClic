@@ -17,7 +17,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">Accueil </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.annonces')}}"> {{__('admin/annonces.all_annonces')}}  </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.albums')}}"> {{__('admin/annonces.all_annonces')}}  </a>
                                 </li>
                                 <li class="breadcrumb-item active">{{__('admin/annonces.add_annonce')}}
                                 </li>

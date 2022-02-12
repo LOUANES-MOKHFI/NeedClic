@@ -10,6 +10,16 @@
 	.red{
 		color: red;
 	}
+	 @media(max-width: 767px){
+        .big-ImageWrapper img{
+            height: 150px;
+        }
+    }
+    @media(min-width: 767px){
+        .big-ImageWrapper img{
+            
+        }
+    }
 </style>
 @endsection
 @section('content')
@@ -28,19 +38,19 @@
 	</div>
 	<div style="float: right;">
 		@isset($service)
-			<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+			<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 		@endisset
 
 		@isset($category)
 			@if($category->category_compte == 1)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_particulier" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_particulier" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 3)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisanat" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisanat" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			
 			@elseif($category->category_compte == 2)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_artisant" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@elseif($category->category_compte == 4)
-				<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+				<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_ing" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 			@endif
 			
 		@endisset
@@ -72,12 +82,12 @@
 	            <div class="clearfix">
 
 	            	@isset($annonces)
-	            		@foreach($annonces as $key=> $annonce)
+	            		@foreach($annonces as $key=> $annonce)	
 			                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
 			                    <div class="boxes first" data-effect="slide-bottom">
 			                        <div class="ImageWrapper big-ImageWrapper boxes_img">
-			                        	<a href="{{route('annonces.show',$annonce->uuid)}}">
-			                            <img class="img-responsive" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
+			                        	<a  style="color: black" href="{{route('annonces.show',$annonce->uuid)}}">
+			                            <img class="img-responsive img" src="{{asset('AnnonceDz/public/Annonces/'.$annonce->id.'/'.$annonce->attachements[0]->file_name)}}" alt="{{$annonce->titre}}">
 			                        	</a>
 			                           
 
@@ -100,7 +110,7 @@
 			                                 	</a>
 	                                   		@endif
                                    		@endif
-			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
+			                            <a style="font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
 			                            <!-- <small class="small_title">{{$annonce->user->wilaya->name}}</small> -->
 			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$annonce->user->id.'/'.$annonce->user->image)}}" style="width: 35px;height: 35px" alt="{{$annonce->user->name}}"></a>
 			                        </h2>

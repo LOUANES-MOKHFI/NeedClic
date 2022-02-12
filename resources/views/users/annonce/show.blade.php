@@ -83,34 +83,34 @@
                                             </li>
                                             <li class="listing_property_agent">
                                                 <strong class="key">Annonce</strong>
-                                                <span class="value">
+                                                <span class="value" style="color:black;">
                                                     {{$annonce->titre}}
                                                 </span>
                                             </li>
                                         	<li class="listing_property_agent">
                                                 <strong class="key">{{__('users/annonce.type')}}</strong>
-                                                <span class="value">
+                                                <span class="">
                                                 	@if($annonce->user->type_compte == 0)
-                                                	<a href="{{route('boutique',$annonce->user->uuid)}}">
-									                    <span class="text-info">
+                                                	<a href="{{route('boutique',$annonce->user->uuid)}}" style="color: black;">
+									                    <span class="">
 									                        {{$annonce->user->category ? $annonce->user->category->name : '/'}}
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 1)
-									                <a href="{{route('boutique',$annonce->user->uuid)}}">
-									                    <span class="text-warning">
+									                <a href="{{route('boutique',$annonce->user->uuid)}}" style="color: black;">
+									                    <span class="">
 									                        {{$annonce->user->category ? $annonce->user->category->name : '/'}}
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 2)
-									                <a href="{{route('boutique',$annonce->user->uuid)}}">
-									                    <span class="text-danger">
+									                <a href="{{route('boutique',$annonce->user->uuid)}}" style="color: black;">
+									                    <span class="">
 									                       {{$annonce->user->category ? $annonce->user->category->name : '/'}}  
 									                    </span>
 									                </a>
 									                @elseif($annonce->user->type_compte == 3)
-									                <a href="{{route('boutique',$annonce->user->uuid)}}">
-									                    <span class="text-success">
+									                <a href="{{route('boutique',$annonce->user->uuid)}}" style="color: black;">
+									                    <span class="">
                                                             {{DetailUser($annonce->user->id) ? DetailUser($annonce->user->id)->service->name : "/"}} 
 									                    </span>
 									                </a>
@@ -118,28 +118,28 @@
                                                 </span>
                                             </li>
                                             <li class="price">
-                                                <strong class="key">Nom de la boutique</strong>
-                                                <span class="value"><a href="{{route('boutique',$annonce->user->uuid)}}">{{$annonce->user->name}}</a></span>
+                                                <strong class="key">Consulter la boutique</strong>
+                                                <span class="value"><a href="{{route('boutique',$annonce->user->uuid)}}" style="color:#A844C1;font-weight: bold;font-size:18px">{{$annonce->user->name}}</a></span>
                                             </li>
                                             <li class="price">
                                                 <strong class="key">{{__('users/annonce.prix')}}</strong>
-                                                <span class="value"><span class="big-price">{{$annonce->prix}} DA</span></span>
+                                                <span class="value"><span class="" style="color:#A844C1;font-size: 18px;font-weight: bold;background: #A844C1;color: white;">{{$annonce->prix}} DA</span></span>
                                             </li>
                                             @if($annonce->user->type_compte == 2)
                                             <li class="listing_property_type">
                                                 <strong class="key">Type de Compte</strong>
-                                                <span class="value">{{$annonce->detail->type_compte_proff}}</span>
+                                                <span class="" style="color:black;">{{$annonce->detail->type_compte_proff}}</span>
                                             </li>
                                             @endif
                                             <li class="listing_property_reference">
                                                 <strong class="key">{{__('users/annonce.negociable')}}</strong>
-                                                <span class="value">
+                                                <span class="">
                                                 	@if($annonce->is_negociable == 0)
-									                    <span class="text-danger">
+									                    <span class="" style="color:black;">
 									                        {{__('users/annonce.notNegociable')}}
 									                    </span>
 									                @elseif($annonce->user->type_compte == 3)
-									                    <span class="text-success">
+									                    <span class="" style="color:black;">
 									                        {{__('users/annonce.negociable')}}
 									                    </span>
 									                @endif
@@ -148,26 +148,26 @@
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.categorie')}}</strong>
                                                 @if($annonce->user->type_compte == 3)
-                                                    <a href="#"><span class="value">
+                                                    <a href="#"><span class="" style="color:black;">
                                                     @if(DetailUser($annonce->user_id)->count()>0)
                                                         {{DetailUser($annonce->user_id)->service->name}}
                                                     @endif</span></a>
                                                 @else
-                                                    <a href="#"><span class="value">{{$annonce->category->name}}</span></a>
+                                                    <a href="#"><span class="" style="color:black;">{{$annonce->category->name}}</span></a>
                                                 @endif
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.wilaya')}}</strong>
-                                               	<span class="value">{{$annonce->user->wilaya->name}}</span>
+                                               	<span class="" style="color:black;">{{$annonce->user->wilaya->name}}</span>
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.commune')}}</strong>
-                                                <span class="value">{{$annonce->user->commune->name}}</span>
+                                                <span class="" style="color:black;">{{$annonce->user->commune->name}}</span>
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.phone')}}</strong>
-                                                <span class="value">
-                                                    <span> <a id="num" href="tel:{{$annonce->user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
+                                                <span class="">
+                                                     <a id="num" href="tel:{{$annonce->user->num_tlfn}}" style="font-size:18px;font-weight: bold; color: #A844C1;"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a> 
                                                 </span>
                                             </li>
                                         </ul>

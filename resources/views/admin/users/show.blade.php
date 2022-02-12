@@ -43,11 +43,11 @@
 					                                            <div class="col-xs-7">
 					                                            	@if($user->type_compte == 0)
 						                                                <span class="text-info type">
-						                                                    Particulier
+						                                                    Marketplace Particulier
 						                                                </span>
 						                                            @elseif($user->type_compte == 1)
 						                                                <span class="text-warning type">
-						                                                    Artisant créateur
+						                                                    Créations artisanales
 						                                                </span>
 						                                            @elseif($user->type_compte == 2)
 						                                                <span class="text-danger type">
@@ -85,13 +85,13 @@
 					                                    <div class="col-md-6">
 					                                        <div class="row">
 					                                            <div class="col-xs-5"><label>{{__('admin/members.wilaya')}}:</label></div>
-					                                            <div class="col-xs-7">{{$user->wilaya->name}}</div>
+					                                            <div class="col-xs-7">@isset($user->wilaya){{$user->wilaya->name}} @endisset</div>
 					                                        </div>
 					                                    </div>
 					                                    <div class="col-md-6">
 					                                        <div class="row">
 					                                            <div class="col-xs-5"><label>{{__('admin/members.commune')}}:</label></div>
-					                                            <div class="col-xs-7">{{$user->commune->name}}</div>
+					                                            <div class="col-xs-7">@isset($user->commune){{$user->commune->name}} @endisset</div>
 					                                        </div>
 					                                    </div>
 					                                </div>
@@ -134,7 +134,7 @@
 						                                    <div class="col-md-6">
 						                                        <div class="row">
 						                                            <div class="col-xs-5"><label>{{__('admin/members.service')}}:</label></div>
-						                                            <div class="col-xs-7">{{$detail->service->name}}</div>
+						                                            <div class="col-xs-7">@isset($detail->service){{$detail->service->name}} @endisset</div>
 						                                        </div>
 						                                    </div>
 					                                    </div>
@@ -184,6 +184,12 @@
 			                                                </a>
 			                                            @endif
 				                                    </div>
+				                                    <div class="col-md-6">
+				                                    	<a href="{{route('admin.users.delete',$user -> uuid)}}"
+			                                                class="btn btn-danger btn-bordered waves-effect waves-light"title="">
+			                                                {{__('admin/members.delete')}}
+			                                            </a>
+				                                    </div>
 				                                </div>
 				                            </div>
 				                        </div>
@@ -192,17 +198,20 @@
 				                @if($user->type_compte == 2)
 
                        			<div class="">
-                                    @isset($user->user_attachements)
-                                        @foreach($user->user_attachements as $attachement)
+                                    @isset($user->albums)
+                                    	@foreach($user->albums as $key=> $album)
                                             <div class="col-md-3 col-xs-6">
                                                 
                                                     <div class="box-content bordered primary margin-bottom-20">
                                                         <div class="profile-avatar">
-                                                            <img src="{{asset('AnnonceDz/public/Profil/'.$user->id.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
+                                                            <img src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$album->attachements[0]->file_name)}}" alt="" style="height: 150px;width: 150px">
+                                                            <div class="Buttons StyleSc">
+                                                       
+		                                                    <h2 class="title" >
+
+		                                                        <a href="{{route('admin.albums.show',$album -> uuid)}}" style="color:Dodgerblue"> {{$album->title}}</a>
+		                                                    </h2>
                                                         </div>
-                                                        <a href="{{route('users.profil.deleteImage',$attachement->id)}}" title="{{__('admin/annonces.delete')}}" class="text-danger" style="font-size: 20px">
-                                                                <i class="fa fa-trash"></i>
-                                                            </a>
                                                     </div>
                                             </div>
                                         @endforeach

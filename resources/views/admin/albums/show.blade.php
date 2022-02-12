@@ -17,7 +17,7 @@ Afficher l'album
 						                    <div class="profile-avatar">
 						                        <img src="{{asset('AnnonceDz/public/Albums/'.$album->id.'/'.$attachement->file_name)}}" alt="" style="height: 150px;width: 150px">
 						                    </div>
-						                    <a href="{{route('admin.annonces.deleteImage',$attachement->id)}}" title="{{__('admin/annonces.delete')}}" class="text-danger" style="font-size: 20px">
+						                    <a href="{{route('admin.albums.deleteImage',$attachement->id)}}" title="{{__('admin/annonces.delete')}}" class="text-danger" style="font-size: 20px">
 						                        	<i class="fa fa-trash"></i>
 						                        </a>
 						                </div>
@@ -55,6 +55,11 @@ Afficher l'album
 						                                        @endif
 				                                            </div>
 				                                        </div>
+				                                    </div>
+				                                    <div class="col-md-6">
+				                                    	<a href="{{route('admin.albums.delete',$album -> uuid)}}" class="btn btn-bordered btn-danger waves-effect waves-light" >
+				                                        {{__('admin/annonces.delete')}}
+				                                        </a>
 				                                    </div>
 				                                    
 				                                    <div class="col-md-6">

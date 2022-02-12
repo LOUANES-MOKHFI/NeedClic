@@ -32,6 +32,9 @@ class Annonces extends Model
     public function category(){
         return $this->belongsTo(CategoryAnnonces::class, 'category_id');
     }
+    public function service(){
+        return $this->belongsTo(Service::class, 'category_id');
+    }
 
     public function attachements(){
         return $this->hasMany(AttachementsAnnonce::class,'annonce_id');

@@ -74,7 +74,7 @@ class MemberController extends Controller
         $to_name = $data['membre']->name;
         $to_email = $data['membre']->email;
         $data = array('name'=>$to_name, "header" => "
-             Votre inscription dans la plateform NeedClic est confirmer,vous peuvez accéder à la plateforme et publier vos annonces",
+             Votre inscription dans la plateforme NeedClic  est confirmée , vous pouvez accéder à la plateforme et publier vos annonces en cliquant sur le lien ",
             "lien" => "www.needclic.com/fr/login",
             );
             Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {

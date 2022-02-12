@@ -1,12 +1,24 @@
+<style type="text/css">
+    @media (max-width: 767px){
+        .logo{
+            height: 90px;
+            width: 110px;
+        }
+    }
+    @media (min-width: 767px){
+        .logo{
+            height: 90px;
+            width: 110px;
+        }
+    }
+</style>
 <div class="main_menu fixed_menu parallax" id="one-parallax" style="" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="container">
             <div class="wrapper">
-                    <div class="header-logo">
-                        <a href="{{route('home')}}" style="margin-left: 30px;">
-                            <img src="{{asset('Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive" style="height: 90px;width: 100px">
-                        </a>
-                    </div> 
-                <!-- End .header-logo -->
+                 <div class="header-logo">
+                    <a href="{{route('home')}}"><img src="{{asset('AnnonceDz/public/Logo/'.Setting()->logo.'/'.Setting()->logo)}}" alt="NeedClic" class="img-responsive logo" ></a>
+                </div> <!-- End .header-logo -->
+                    
                 <div class="btn-cnt-mn">
                 
                    <!--  <a href="#" class="dropdown-item btn-sumbit-menu" data-toggle="modal"   data-target="#search" data-original-title="Rechercher un annonce" style="background-color: DodgerBlue;">
@@ -16,7 +28,7 @@
                     <div class="dropdown profile-menu-settings" style="">
 
                         <button class="btn-dropdown dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true">
-                            <img src="/users/img/home/login-ic.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="35" height="35" style="color: black;" >
+                            <img src="/users/img/home/login1.png" alt="NeedClic" class="user-avatar-md rounded-circle" width="40" height="40" style="color: black;" >
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu3" style="background-color: black;">      
                             @guest                            
@@ -80,7 +92,7 @@
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false" style="background-color: black;">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

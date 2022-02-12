@@ -63,11 +63,11 @@ Tout les albums
                                                 </a>
                                             @endif
                                             
-                                            @can('edit_annonce')
+                                            
                                             <a href="{{route('admin.albums.delete',$album -> uuid)}}" class="btn btn-bordered btn-danger waves-effect waves-light"title="{{__('admin/annonces.delete')}}">
                                             <i class="fa fa-trash"></i>
                                             </a>
-                                            @endcan
+                                            
 
                                         </td>
                                     </tr>

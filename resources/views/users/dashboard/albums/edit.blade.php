@@ -47,7 +47,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">{{__('users/albums.titre')}}</label>
+                                                            <label for="projectinput1">description</label>
                                                             <input type="text" value="{{$album->title}}" id="type"
                                                                    class="form-control" placeholder=" " name="title">
                                                             @error("title")

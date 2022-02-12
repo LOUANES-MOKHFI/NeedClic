@@ -7,6 +7,15 @@
 	.show-menu-arrow option{
 		color: black;
 	}
+	 @media(max-width: 767px){
+        .big-ImageWrapper img{
+            height: 150px;
+        }
+    }
+    @media(min-width: 767px){
+        .big-ImageWrapper img{
+            
+        }
 </style>
 @endsection
 @section('content')
@@ -21,7 +30,7 @@
 	    </ul>
 	</div>
 	<div style="float: right;">
-		<a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+		<a class="btn btn-bordered btn-info" style="background-color: #A844C1;;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_boutique" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 	</div>
     
 </div>
@@ -54,7 +63,7 @@
 			                            </div>
 			                        </div>
 			                        <h2 class="title">
-			                            <a style="color: DodgerBlue;font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
+			                            <a style="font-weight: bold" href="{{route('boutique',$user->uuid)}}"> {{$user->name}}</a>
 			                            <small class="small_title">
 			                            	<div class="my-rating" data-rating="{{$user->avg_rating}}" data-uuid="{{$user->uuid}}" data-id="{{$user->id}}"></div>
 			                            </small>

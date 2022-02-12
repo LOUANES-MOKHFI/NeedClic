@@ -1,3 +1,18 @@
+<style type="text/css">
+    #footer a.social.fa-twitter   { background:#41b7d8!important; color:#fff!important; }
+#footer a.social.fa-facebook  { background:#3b5997!important; color:#fff!important; }
+#footer a.social.fa-google-plus   { background:#d64937!important; color:#fff!important; }
+#footer a.social.fa-linkedin  { background:#0073b2!important; color:#fff!important; }
+#footer a.social.fa-instagram     { background:#cb2027!important; color:#fff!important; }
+#footer a.social.fa-vimeo-square  { background:#388fc5!important; color:#fff!important; }
+#footer a.social.fa-youtube-square{ background:#A40F09!important; color:#fff!important; }
+#footer a.social.fa-flickr    { background:#ff0084!important; color:#fff!important; }
+#footer a.social.fa-pinterest     { background:#cb2027!important; color:#fff!important; }
+#footer a.social.fa-skype     { background:#00aff0!important; color:#fff!important; }
+#footer a.social.fa-rss       { background:#e0812a!important; color:#fff!important; }
+#footer a.social.default      { background:#37353A!important; color:#fff!important; }
+#footer a.social.rounded        { width:38px; height:38px; line-height:38px; }
+</style>
 <footer id="footer" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="container">
             <div class="row">

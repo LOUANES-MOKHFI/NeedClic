@@ -29,6 +29,7 @@
                                     <th>{{__('admin/annonces.prix')}}</th>
                                     <th>{{__('admin/annonces.negociable')}}</th>
                                     <th>{{__('admin/annonces.added_by')}}</th>
+                                    <th>email</th>
                                     <th>{{__('admin/annonces.actions')}}</th>
                                 </tr>
                             </thead>
@@ -41,6 +42,7 @@
                                     <th>{{__('admin/annonces.prix')}}</th>
                                     <th>{{__('admin/annonces.negociable')}}</th>
                                     <th>{{__('admin/annonces.added_by')}}</th>
+                                    <th>email</th>
                                     <th>{{__('admin/annonces.actions')}}</th>
                                 </tr>
                             </tfoot>
@@ -52,13 +54,19 @@
                                         
                                         <td>{{$annonce ->titre}}</td>
 
-                                        <td>{{$annonce->category ? $annonce ->category->name : '/'}}</td>
+                                        <td>@if($annonce->user->type_compte == 3)
+                                                {{$annonce->service ? $annonce ->service->name : '/'}}
+                                            @else
+                                                {{$annonce->category ? $annonce ->category->name : '/'}}
+                                            @endif
+                                        </td>
                                         <td>@if($annonce ->status==1) 
                                             <span class="text-success">{{__('admin/annonces.active')}} </span>@else 
                                             <span class="text-warning">{{__('admin/annonces.notActive')}}</span> @endif</td>
                                         <td>{{$annonce ->prix}}</td>
                                         <td>@if($annonce ->is_negociable==0) {{__('admin/annonces.negociable')}} @else {{__('admin/annonces.notNegociable')}} @endif</td>
                                         <td>{{$annonce->user ? $annonce ->user->name : 'utilisateur supprimée'}}</td>
+                                        <td>{{$annonce->user ? $annonce ->user->email : 'utilisateur supprimée'}}</td>
 
 
 
@@ -78,14 +86,14 @@
                                                 </a>
                                             @endif
                                             
-                                            @can('edit_annonce')
+                                            
                                             <a href="{{route('admin.annonces.edit',$annonce -> uuid)}}" class="btn btn-bordered btn-warning waves-effect waves-light"
                                                 title="{{__('admin/annonces.edit')}}"><i class="fa fa-edit"></i>
                                             </a>
                                             <a href="{{route('admin.annonces.delete',$annonce -> uuid)}}" class="btn btn-bordered btn-danger waves-effect waves-light"title="{{__('admin/annonces.delete')}}">
                                             <i class="fa fa-trash"></i>
                                             </a>
-                                            @endcan
+                                            
 
                                         </td>
                                     </tr>

@@ -27,7 +27,7 @@
         </ul>
     </div>
     <div style="float: right;">
-            <a class="btn btn-bordered btn-info" style="background-color: DodgerBlue;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_blog" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
+            <a class="btn btn-bordered btn-info" style="background-color: #A844C1;margin: 3px" href="#" id="" data-toggle="modal" data-target="#filter_blog" ><i class="fa fa-filter" ></i> FILTRER PLUS</a>
 
         
         
@@ -43,7 +43,7 @@
                             @isset($blogs)
                             @if($blogs->count()==0)
                                 <div class="alert alert-danger text-center" id="msg">
-                                    Aucune blog n'existe dans cette catégorie
+                                    Aucun blog n'existe dans cette catégorie
                                 </div>
                             @endif
                             @endisset

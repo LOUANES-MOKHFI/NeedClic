@@ -316,6 +316,7 @@
                         
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div id="" class="clearfix">
+                            @if($users->count()>0)
                             <div class="flexslider">
                                 <ul class="slides">
                                     @isset($users)
@@ -363,6 +364,7 @@
                                     @endisset
                                 </ul><!-- end slides -->
                             </div><!-- end flexslider -->
+                            @endif
                         </div><!-- end property-slider -->
                         </div>
 

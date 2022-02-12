@@ -24,7 +24,7 @@ class AnnonceRequest extends FormRequest
     public function rules()
     {
         return [
-            'titre'         => 'required',
+            'titre'         => 'required|min:3|max:36',
             //'is_negociable' => 'required|in:0,1',
             'prix'          => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'description'   => 'required|min:3',

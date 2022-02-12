@@ -24,7 +24,7 @@
 
 <div class="col-lg-12 parallax" id="one-parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
     <ul class="breadcrumb">
-        <li><a href="{{route('home')}}">{{__('users/annonce.home')}}</a></li>
+        <li><a href="{{route('home')}}"  style="color: #A844C1;">{{__('users/annonce.home')}}</a></li>
         <li>{{$user->name}} </li>
     </ul>
 </div>
@@ -37,18 +37,18 @@
                                 {{$user->name}} <br>  
                                 <large>
                                     @if($user->type_compte == 0)
-                                            <span class="text-info">
+                                            <span class=""  style=" color: #A844C1;">
                                                 {{$user->category ? $user->category->name : "categorie n'exsite pas"}}                           
                                             </span>
                                     @elseif($user->type_compte == 1)
-                                            <span class="text-warning">
+                                            <span class=""  style=" color: #A844C1;">
                                                 {{$user->category ? $user->category->name : "categorie n'exsite pas"}}                           
                                             </span>
                                     @elseif($user->type_compte == 2)
-                                            <span class="text-danger"> 
+                                            <span class=""  style=" color: #A844C1;"> 
                                                  {{$user->category ? $user->category->name : "categorie n'exsite pas"}}
                                             </span>
-                                    @elseif($user->type_compte == 3)<span class="text-success">
+                                    @elseif($user->type_compte == 3)<span class=""  style=" color: #A844C1;">
                                         {{DetailUser($user->id) ? DetailUser($user->id)->service->name : "Service n'exsite pas"}}                           
                                     </span>
                                     @endif
@@ -87,15 +87,15 @@
                                             
                                             <div class="col-lg-12 clearfix">
                                                 <div class="agent_meta clearfix">
-                                                    <span><i class="fa fa-envelope"></i> <a href="mailto:{{$user->email}}">{{$user->email}}</a></span>
-                                                    <span><i class="fa fa-map-marker"></i> {{$user->wilaya->name}}</span>
-                                                    <span><i class="fa fa-map-marker"></i> {{$user->commune->name}}</span>
+                                                    <span><i class="fa fa-envelope"></i> <a href="mailto:{{$user->email}}" style="color: black">{{$user->email}}</a></span>
+                                                    <span><i class="fa fa-map-marker"></i> @isset($user->wilaya){{$user->wilaya->name}} @endisset</span>
+                                                    <span><i class="fa fa-map-marker"></i> @isset($user->commune) {{$user->commune->name}}@endisset</span>
                                                     @if($user->type_compte == 3)
                                                     <span><i class="fa fa-map-marker"></i> {{$detail->adress}}</span>
                                                     @endif
                                                         
                                                     
-                                                    <span><i class="fa fa-phone-square"></i> <a id="num" href="tel:{{$user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
+                                                    <span><i class="fa fa-phone-square"></i> <a  style="font-size:18px;font-weight: bold; color: #A844C1;" id="num" href="tel:{{$user->num_tlfn}}"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a>  </span>
 
                                                     @if($user->type_compte == 2)
                                                     
