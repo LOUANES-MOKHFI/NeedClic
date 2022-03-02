@@ -23,6 +23,7 @@
                                 <th>{{__('admin/members.email')}} </th>
                                 <th>{{__('admin/members.phone')}} </th>
                                 <th>{{__('admin/members.type')}} </th>
+                                <th>nombre d'aimes </th>
                                 <th>{{__('admin/members.actions')}}</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                 <th>{{__('admin/members.email')}} </th>
                                 <th>{{__('admin/members.phone')}} </th>
                                 <th>{{__('admin/members.type')}} </th>
+                                <th>nombre d'aimes </th>
                                 <th>{{__('admin/members.actions')}}</th>
                             </tr>
                         </tfoot>
@@ -62,6 +64,7 @@
                                                 </span>
                                             @endif
                                         </td>
+                                        <td>{{$user->count_like}}</td>
                                         <td>
                                             <a href="{{route('admin.users.show',$user -> uuid)}}"
                                                 class="btn btn-info btn-bordered waves-effect waves-light"title="{{__('admin/members.show')}}">

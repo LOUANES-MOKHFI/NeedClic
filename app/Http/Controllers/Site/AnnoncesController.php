@@ -319,6 +319,8 @@ class AnnoncesController extends Controller
         $users_service_ids = DetailsUser::where('service_id',$data['service_id'])->pluck('user_id');
         $users_wil_ids = User::where('wilaya_id',$data['wilaya_id'])->pluck('id');
         $users_wil_com_ids = User::where('wilaya_id',$data['wilaya_id'])->where('commune_id',$data['commune_id'])->pluck('id');
+        $data['pubs'] = Publicite::where('in_home',3)->where('image',
+            '<>',null)->get();
 
         if(Auth::user()){
         $data['usersLike'] = UserLikes::where('user_id',Auth::user()->id)->where('is_like',1)->pluck('annonce_id')->toArray();
@@ -404,6 +406,9 @@ class AnnoncesController extends Controller
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
         $data['category'] = CategoryAnnonces::where('id',$data['category_id'])->first();
+
+        $data['pubs'] = Publicite::where('in_home',3)->where('image',
+            '<>',null)->get();
         //$users_service_ids = DetailsUser::where('service_id',$data['service_id'])->pluck('user_id');
         $users_wil_ids = User::where('wilaya_id',$data['wilaya_id'])->where('type_compte',0)->pluck('id');
         $users_wil_com_ids = User::where('wilaya_id',$data['wilaya_id'])->where('commune_id',$data['commune_id'])->where('type_compte',0)->pluck('id');
@@ -486,6 +491,9 @@ class AnnoncesController extends Controller
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
         $data['category'] = CategoryAnnonces::where('id',$data['category_id'])->first();
+
+        $data['pubs'] = Publicite::where('in_home',3)->where('image',
+            '<>',null)->get();
         //$users_service_ids = DetailsUser::where('service_id',$data['service_id'])->pluck('user_id');
         $users_wil_ids = User::where('wilaya_id',$data['wilaya_id'])->where('type_compte',1)->pluck('id');
         $users_wil_com_ids = User::where('wilaya_id',$data['wilaya_id'])->where('commune_id',$data['commune_id'])->where('type_compte',1)->pluck('id');
@@ -573,7 +581,11 @@ class AnnoncesController extends Controller
 
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
+
         $data['category'] = CategoryAnnonces::where('id',$data['category_id'])->first();
+        $data['pubs'] = Publicite::where('in_home',3)->where('image',
+            '<>',null)->get();
+
         $users_type_ids = DetailsUser::where('type_compte_proff','Ingénieure')->pluck('user_id');
         $users_wil_ids = User::where('wilaya_id',$data['wilaya_id'])->where('is_active',1)->pluck('id');
         $users_wil_com_ids = User::where('wilaya_id',$data['wilaya_id'])->where('is_active',1)->where('commune_id',$data['commune_id'])->pluck('id');
@@ -672,6 +684,10 @@ class AnnoncesController extends Controller
         $data['wilaya'] = Wilaya::where('id',$data['wilaya_id'])->first();
         $data['commune'] = Commune::where('id',$data['commune_id'])->first();
         $data['category'] = CategoryAnnonces::where('id',$data['category_id'])->first();
+
+        $data['pubs'] = Publicite::where('in_home',3)->where('image',
+            '<>',null)->get(); 
+        
         $users_type_ids = DetailsUser::where('type_compte_proff','Artisant')->pluck('user_id');
 
         $users_wil_ids = User::where('wilaya_id',$data['wilaya_id'])->where('is_active',1)->pluck('id');

@@ -1,4 +1,4 @@
-@if($pubs->count() >0)
+@isset($pubs)
 <section id="one-parallax" class="parallax" style="background-image: url('/users/img/01_parallax.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
         <div class="mapandslider">
             <div class=" dm-shadow" style="padding-top: 5px; padding-bottom: 5px;">
@@ -26,4 +26,4 @@
             </div>
         </div>
     </section><!-- end mapandslider -->
-@endif
+@endisset

@@ -324,7 +324,7 @@
                                             <li>
                                                 <div class="desc">
                                                     <div class="slider-pro-desc">
-                                                        <h1><a href="{{route('boutique',$user->uuid)}}">{{$user->name}}</a></h1>
+                                                        <h1><a style="color: black;" href="{{route('boutique',$user->uuid)}}">{{$user->name}}</a></h1>
 
                                                         <a  class="slide-agent" href="{{route('boutique',$user->uuid)}}"><img src="{{asset('AnnonceDz/public/User/'.$user->id.'/'.$user->image)}}" alt="{{$user->name}}"></a>
                                                         @if($user->type_compte == 0)

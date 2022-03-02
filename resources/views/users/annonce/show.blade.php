@@ -64,8 +64,10 @@
 
                                     <div class="listing-detail-attributes">
                                         <ul>
+                                           
                                             <li class="listing_property_year_built">
                                                 <strong class="key">
+                                                    @isset($annonce->user)
                                                     @if($annonce->user->type_compte == 1)
                                                         @if(Auth::check())
                                                             <a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
@@ -79,6 +81,7 @@
                                                             </a>
                                                         @endif
                                                     @endif
+                                                    @endisset
                                                 </strong>
                                             </li>
                                             <li class="listing_property_agent">
@@ -90,6 +93,7 @@
                                         	<li class="listing_property_agent">
                                                 <strong class="key">{{__('users/annonce.type')}}</strong>
                                                 <span class="">
+                                                    @isset($annonce->user)
                                                 	@if($annonce->user->type_compte == 0)
                                                 	<a href="{{route('boutique',$annonce->user->uuid)}}" style="color: black;">
 									                    <span class="">
@@ -115,60 +119,96 @@
 									                    </span>
 									                </a>
 									                @endif
+                                                    @endisset
                                                 </span>
                                             </li>
                                             <li class="price">
                                                 <strong class="key">Consulter la boutique</strong>
-                                                <span class="value"><a href="{{route('boutique',$annonce->user->uuid)}}" style="color:#A844C1;font-weight: bold;font-size:18px">{{$annonce->user->name}}</a></span>
+                                                @isset($annonce->user)
+                                                <span class="value">
+                                                    <a href="{{route('boutique',$annonce->user->uuid)}}" style="color:#A844C1;font-weight: bold;font-size:18px">
+                                                        @isset($annonce->user)
+                                                        {{$annonce->user->name}}
+                                                        @endisset
+                                                    </a>
+                                                </span>
+                                                @endisset
                                             </li>
                                             <li class="price">
                                                 <strong class="key">{{__('users/annonce.prix')}}</strong>
                                                 <span class="value"><span class="" style="color:#A844C1;font-size: 18px;font-weight: bold;background: #A844C1;color: white;">{{$annonce->prix}} DA</span></span>
                                             </li>
+                                            @isset($annonce->user)
                                             @if($annonce->user->type_compte == 2)
                                             <li class="listing_property_type">
                                                 <strong class="key">Type de Compte</strong>
                                                 <span class="" style="color:black;">{{$annonce->detail->type_compte_proff}}</span>
                                             </li>
                                             @endif
+                                            @endisset
+
                                             <li class="listing_property_reference">
                                                 <strong class="key">{{__('users/annonce.negociable')}}</strong>
+                                                @isset($annonce->user)
                                                 <span class="">
                                                 	@if($annonce->is_negociable == 0)
 									                    <span class="" style="color:black;">
 									                        {{__('users/annonce.notNegociable')}}
 									                    </span>
+
+                                                    @elseif($annonce->is_negociable == 1)
+                                                    
+                                                    <span class="" style="color:black;">
+                                                        {{__('users/annonce.negociable')}}
+                                                    </span>
 									                @elseif($annonce->user->type_compte == 3)
 									                    <span class="" style="color:black;">
 									                        {{__('users/annonce.negociable')}}
 									                    </span>
 									                @endif
                                                 </span>
+                                                @endisset
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.categorie')}}</strong>
+                                                @isset($annonce->user)
                                                 @if($annonce->user->type_compte == 3)
                                                     <a href="#"><span class="" style="color:black;">
                                                     @if(DetailUser($annonce->user_id)->count()>0)
                                                         {{DetailUser($annonce->user_id)->service->name}}
                                                     @endif</span></a>
                                                 @else
-                                                    <a href="#"><span class="" style="color:black;">{{$annonce->category->name}}</span></a>
+                                                    <a href="#"><span class="" style="color:black;">
+                                                        @isset($annonce->category) {{$annonce->category->name}} @endisset</span></a>
                                                 @endif
+                                                @endisset
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.wilaya')}}</strong>
-                                               	<span class="" style="color:black;">{{$annonce->user->wilaya->name}}</span>
+                                               	<span class="" style="color:black;">
+                                                    @isset($annonce->user) 
+                                                    @isset($annonce->user->wilaya)  
+                                                        {{$annonce->user->wilaya->name}} 
+                                                    @endisset
+                                                    @endisset
+                                                </span>
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.commune')}}</strong>
-                                                <span class="" style="color:black;">{{$annonce->user->commune->name}}</span>
+                                                <span class="" style="color:black;">
+                                                    @isset($annonce->user)
+                                                    @isset($annonce->user->commune) 
+                                                        {{$annonce->user->commune->name}} 
+                                                    @endisset
+                                                    @endisset</span>
                                             </li>
                                             <li class="listing_property_year_built">
                                                 <strong class="key">{{__('users/annonce.phone')}}</strong>
+                                                @isset($annonce->user)
                                                 <span class="">
                                                      <a id="num" href="tel:{{$annonce->user->num_tlfn}}" style="font-size:18px;font-weight: bold; color: #A844C1;"><i class="spanNum" style="display:inline;"></i><i class="spanNum1" style="display:inline;padding-left:-10px;background-color: rgba(0,0,255,0.3);color: transparent;"></i>Appeler</a> 
                                                 </span>
+                                                @endisset
                                             </li>
                                         </ul>
                                     </div><!-- /.listing-detail-attributes -->

@@ -54,11 +54,14 @@
                                         
                                         <td>{{$annonce ->titre}}</td>
 
-                                        <td>@if($annonce->user->type_compte == 3)
+                                        <td>
+                                            @isset($annonce->user->type_compte)
+                                            @if($annonce->user->type_compte == 3)
                                                 {{$annonce->service ? $annonce ->service->name : '/'}}
                                             @else
                                                 {{$annonce->category ? $annonce ->category->name : '/'}}
                                             @endif
+                                            @endisset
                                         </td>
                                         <td>@if($annonce ->status==1) 
                                             <span class="text-success">{{__('admin/annonces.active')}} </span>@else 

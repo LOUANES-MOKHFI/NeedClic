@@ -171,6 +171,18 @@
 				                                    <div class="col-md-4">
 				                                    	<div class="my-rating" data-rating="{{$user->avg_rating}}" ></div>
 				                                    </div>
+				                                    <div class="col-md-12">
+				                                        <div class="row">
+				                                            <div class="col-xs-4"><label>nombre d'aimes:</label></div>
+				                                            <div class="col-xs-2">
+				                                            	@if($user ->count_like=0) 
+						                                            <span class="text-danger">{{$user->count_like}} </span>
+						                                        @else 
+						                                            <span class="text-success">{{$user->count_like}}</span>
+						                                        @endif
+				                                            </div>
+				                                        </div>
+				                                    </div><br>
 				                                    <div class="col-md-6">
 				                                    	@if($user ->in_home == 0)
 			                                                <a href="{{route('admin.users.AddToHome',$user -> uuid)}}" class="btn btn-bordered btn-primary waves-effect waves-light"

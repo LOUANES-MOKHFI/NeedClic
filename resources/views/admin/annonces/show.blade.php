@@ -44,6 +44,7 @@
 				                                   
 				                                    <div class="col-md-6">
 				                                        <div class="row">
+				                                        	@isset($annonce->user->type_compte)
                                         	@if($annonce->user->type_compte == 3)
                                         	<div class="col-xs-5">
                             				<label>Service:</label>
@@ -59,6 +60,7 @@
 				                                 </div>
                                                
                                             @endif
+                                            @endisset
 				                                            
 				                                        </div>
 				                                    </div>

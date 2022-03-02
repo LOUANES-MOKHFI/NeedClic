@@ -87,6 +87,7 @@ Notre contribution sociale se résumera dans la gratuité des boutiques des cré
         .flex-direction-nav>li>a{
             background-color: #A844C1;
         }
+        
 
     </style>
     @yield('style')

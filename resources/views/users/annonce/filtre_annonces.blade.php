@@ -72,6 +72,7 @@
 			                        </div>
 			                        <h2 class="title">
 			                        	@if(Auth::check())
+			                        	@isset($annonce->user)
 			                        	@if($annonce->user->type_compte == 1)
 			                        		
                                    			<a  href="#" class="Like nav-link" data-uuid="{{$annonce->user->uuid}}" data-annonce_id="{{$annonce->id}}" data-user_uuid="{{Auth::user()->uuid}}" title="J'aime">
@@ -81,10 +82,11 @@
 		                              
 
                                    		@endif
+                                   		@endisset
                                    		@endif
 
 			                            <a style="color: black;font-weight: bold" href="{{route('annonces.show',$annonce->uuid)}}"> {{$annonce->titre}}</a>
-			                            <!-- <small class="small_title">{{$annonce->user->wilaya->name}}</small> -->
+			                            <!-- <small class="small_title">@isset($annonce->user) {{$annonce->user->wilaya->name}} @endisset</small> -->
 			                            <a class="box-agent-icon" href="{{route('boutique',$annonce->user->uuid)}}"><img style="width: 35px;height: 35px" src="{{asset('AnnonceDz/public/User/'.$annonce->user->id.'/'.$annonce->user->image)}}" alt="{{$annonce->user->name}}"></a>
 			                        </h2>
 			                    </div><!-- end boxes -->
